@@ -282,11 +282,15 @@ nav.dock a{transition:color .35s cubic-bezier(.22,1,.36,1)!important}
   .m-contact .lc-note small{font-size:13px;margin-bottom:8px}
 }
 
-/* type: only Helvetica Neue Bold, plus Figma Hand Bold for the handwritten bits */
-@font-face{font-family:"HN Bold";src:local("Helvetica Neue Bold"),local("HelveticaNeue-Bold");font-weight:700}
+/* type: Helvetica Neue (bold or regular, as each element sets it), plus Figma Hand Bold for the handwritten bits */
+@font-face{font-family:"UHN";src:local("Helvetica Neue Bold"),local("HelveticaNeue-Bold"),local("Helvetica Bold"),local("Helvetica-Bold"),local("Arial Bold");font-weight:600 900}
+@font-face{font-family:"UHN";src:local("Helvetica Neue"),local("HelveticaNeue"),local("Helvetica"),local("Arial");font-weight:100 599}
 @font-face{font-family:"Figma Hand";src:local("Figma Hand Bold"),local("FigmaHand-Bold"),local("Figma Hand");font-weight:700}
-body,body *{font-family:"HN Bold","Helvetica Neue",Helvetica,Arial,sans-serif!important;font-weight:700!important}
+body,body *{font-family:"UHN","Helvetica Neue",Helvetica,Arial,sans-serif!important}
 .street .hero-copy .big mark,.m h1 em,.lc-note small{font-family:"Figma Hand","Caveat",cursive!important}
+
+/* dock Home icon: Utkarsh's photo, cropped to the face */
+.me-ph{display:inline-block;flex:none;border-radius:50%;background:url(images/me.webp) 52.2% 57.1%/250% auto no-repeat}
 </style>
 <link rel="icon" type="image/png" href="images/about-page/logo.png">
 <meta name="description" content="Utkarsh, a multidisciplinary designer at NID Bangalore: retail spaces, fixtures, products, brands and the stories around them.">
@@ -611,7 +615,7 @@ body,body *{font-family:"HN Bold","Helvetica Neue",Helvetica,Arial,sans-serif!im
     <div class="lc-notes"><a class="lc-note" href="#" style="--r:-3deg"><small>find me on</small>LinkedIn</a><a class="lc-note" href="#" style="--r:3deg"><small>see my</small>Behance</a><a class="lc-note" href="#" style="--r:2deg"><small>follow along</small>Instagram</a><a class="lc-note" href="#" style="--r:-2deg"><small>download my</small>Résumé</a></div>
   </section>
 </div>
-<nav class="dock" aria-label="Sections"><a href="index.html" data-nav="top"><svg class="me-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ffcb05"/><circle cx="12" cy="8.6" r="3.2" fill="#121212"/><path d="M6.2 19.2c.6-3.6 2.9-5.6 5.8-5.6s5.2 2 5.8 5.6" fill="#121212"/></svg>Home</a><a href="#about" data-nav="about" aria-current="page">About</a><a href="#projects" data-nav="projects">Projects</a><a href="#journey" data-nav="journey">Journey</a><a href="#contact" data-nav="contact">Contact</a><a href="#contact" data-nav="resume" class="cta">Resume<svg class="arr" viewBox="0 0 13 13" aria-hidden="true"><path d="M12 12V1H1M1 12 12 1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></nav>
+<nav class="dock" aria-label="Sections"><a href="index.html" data-nav="top"><span class="me-ic me-ph" aria-hidden="true"></span>Home</a><a href="#about" data-nav="about" aria-current="page">About</a><a href="#projects" data-nav="projects">Projects</a><a href="#journey" data-nav="journey">Journey</a><a href="#contact" data-nav="contact">Contact</a><a href="#contact" data-nav="resume" class="cta">Resume<svg class="arr" viewBox="0 0 13 13" aria-hidden="true"><path d="M12 12V1H1M1 12 12 1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></nav>
 <div aria-hidden="true" style="height:104px"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
 <script>(() => {
