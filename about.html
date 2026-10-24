@@ -190,7 +190,55 @@ body.paused *,body.paused *::after{animation-play-state:paused!important}
   .js .tl-line{transform:rotate(.163deg)}
   .js .ring path{stroke-dashoffset:0}
 }
-</style></head><body>
+
+/* phones: the 1440 canvas would shrink text to ~4px, so show a stacked layout instead */
+.m{display:none}
+@media (max-width:767px){
+  .wrap{display:none}
+  .m{display:block;padding:20px 16px 8px;font-family:var(--f-inter);color:var(--ink)}
+  .m .glass>*{position:static}
+  .m-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+  .m-top .badge{position:relative;display:flex;align-items:center;gap:10px;padding:10px 12px 10px 14px}
+  .m-top .badge img{width:26px;height:26px}
+  .m-top button{position:relative;height:44px;padding:0 16px;border-radius:26px;font:600 14px/1 var(--f-inter);color:var(--ink);cursor:pointer}
+  .m h1{font:700 44px/1.05 var(--f-inter);letter-spacing:-.03em;margin:0 0 18px}
+  .m h1 em{font-style:normal;padding:0 6px;border:3px solid #2f6bff;border-radius:999px}
+  .m h2{font:700 30px/1.1 var(--f-inter);letter-spacing:-.02em;margin:0 0 18px}
+  .m mark{background:linear-gradient(transparent 55%,var(--hl) 55%);color:inherit;padding:0 2px}
+  .m mark.c{background:linear-gradient(transparent 55%,rgba(251,70,22,.45) 55%)}
+  .m mark.b{background:linear-gradient(transparent 55%,rgba(47,107,255,.3) 55%)}
+  .m p{font-size:17px;line-height:1.55;margin:0 0 16px;color:var(--ink-2)}
+  .m-sec{margin:0 -16px;padding:44px 16px}
+  .m-band{background:var(--band)}
+  .m-photo{position:relative;margin:8px 0 20px}
+  .m-photo img{display:block;width:78%;margin:0 auto;mix-blend-mode:multiply}
+  :root[data-theme="dark"] .m-photo img{mix-blend-mode:screen;filter:invert(1)}
+  .m-notes{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .m-notes span{background:#ffe680;color:#121212;font:600 14px/1.2 var(--f-inter);padding:10px 12px;border-radius:4px;box-shadow:0 6px 12px -6px rgba(18,18,18,.3)}
+  .m-notes span:nth-child(1){transform:rotate(-3deg)}.m-notes span:nth-child(2){transform:rotate(2deg)}.m-notes span:nth-child(3){transform:rotate(-1.5deg)}
+  .m-facts{display:grid;gap:12px}
+  .m-fact{padding:18px;border-radius:20px}
+  .m-fact b{display:block;font:700 13px/1 var(--f-inter);letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+  .m-fact p{margin:0;color:var(--ink);font-size:16px}
+  .m-mon{position:relative;max-width:420px;margin:8px auto 18px}
+  .m-mon>img{display:block;width:100%}
+  .m-apps{position:absolute;left:5.5%;right:5.5%;top:5%;height:55%;display:grid;grid-template-columns:repeat(5,1fr);align-content:center;gap:6px;padding:6px}
+  .m-apps img{width:100%;aspect-ratio:1;object-fit:contain}
+  .m-pills{display:flex;flex-wrap:wrap;gap:8px}
+  .m-pills span{padding:10px 14px;border-radius:50px;font:600 14px/1 var(--f-geist)}
+  .m-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .m-cards a{aspect-ratio:3/4;border-radius:24px;background:var(--card);display:flex;align-items:flex-end;padding:14px;color:var(--ink-2);font:600 13px/1.2 var(--f-inter);text-decoration:none}
+  .m-route{list-style:none;margin:0;padding:0 0 0 22px;border-left:4px solid var(--coral);border-radius:2px}
+  .m-route li{position:relative;margin:0 0 22px}
+  .m-route li::before{content:"";position:absolute;left:-33px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--coral);border:3px solid var(--band)}
+  .m-route b{display:block;font:700 19px/1.2 var(--f-inter)}
+  .m-route span{display:block;font-size:15px;color:var(--ink-2);margin-top:2px}
+}
+</style>
+<link rel="icon" type="image/png" href="images/about-page/logo.png">
+<meta name="description" content="Utkarsh, a multidisciplinary designer at NID Bangalore: retail spaces, fixtures, products, brands and the stories around them.">
+<meta property="og:title" content="About | Utkarsh | u.design"><meta property="og:image" content="https://udotdesign.me/images/about-page/photo.jpg"><meta property="og:url" content="https://udotdesign.me/about.html">
+</head><body>
 <main class="wrap" id="wrap"><div class="stage" id="stage">
 <a class="glass badge" href="index.html" aria-label="u.design home" style="left:80px;top:43px;width:161px;height:52px;"><span class="badge-t" style="left:13px;top:19px;">PORTFOLIO BY</span><img src="images/about-page/logo.png" alt="Utkarsh logo" style="left:118px;top:11px;width:28px;height:28px;"></a>
 <button class="glass pill" id="pauseBtn" type="button" aria-pressed="false" style="left:1135px;top:43px;width:113px;height:52px;"><i class="bar" style="left:19px;top:16px;width:4.5px;height:16px;"></i><i class="bar" style="left:32.5px;top:16px;width:4.5px;height:16px;"></i><b class="play" aria-hidden="true" style="left:19px;top:16px;"></b><span class="lbl" style="left:46px;top:15.5px;">Pause</span></button>
@@ -464,6 +512,37 @@ body.paused *,body.paused *::after{animation-play-state:paused!important}
 <div class="stop" style="left:812px;top:4729px;width:240px;text-align:left" data-x="812" data-y="4729" data-al="left"><b>UPID, Noida</b><span>B.Des in Product Design</span></div>
 <div class="stop" style="left:1175px;top:4782px;width:240px;text-align:left" data-x="1175" data-y="4782" data-al="left"><b>UPID, Noida</b><span>B.Des in Product Design</span></div>
 </div></main>
+<div class="m">
+  <div class="m-top"><a class="glass badge" href="index.html" aria-label="u.design home"><span class="badge-t">PORTFOLIO BY</span><img src="images/about-page/logo.png" alt=""></a><button class="glass" type="button" onclick="document.getElementById('themeBtn').click()">Day / Night</button></div>
+  <h1>Hey, I’m <em>Utkarsh.</em></h1>
+  <p>I grew up in a <mark>small town</mark>, watching how people move through markets and shops without really noticing them. A bachelor’s in <mark>Product design</mark> taught me how things are built. A year in industry taught me how they’re used. Now, in my master’s, I design stores, fixtures and brands for one simple goal: to make <mark class="c">people stop and notice.</mark></p>
+  <div class="m-photo"><img src="images/about-page/photo.jpg" alt="Utkarsh"><div class="m-notes"><span>Likes sketches and sticky notes</span><span>Loves late night bike rides</span><span>Big food lover</span></div></div>
+  <div class="m-facts">
+    <div class="glass m-fact"><b>Right now</b><p><mark class="b">M.Des in Retail Design</mark> at NID Bangalore, heading into my Graduation Project.</p></div>
+    <div class="glass m-fact"><b>On the side</b><p><mark class="b">U.design</mark>, my freelance brand and content strategy, Brand Identity, and <mark class="b">Clothique</mark>, a t-shirt graphics label.</p></div>
+    <div class="glass m-fact"><b>Before that</b><p><mark class="b">B.Des in Product Design</mark> at UPID Noida, then a year at INRADA O.G.R.S Chennai.</p></div>
+  </div>
+  <section class="m-sec m-band" style="margin-top:44px">
+    <h2>My <mark>Loadout.</mark></h2>
+    <div class="m-mon"><img src="images/about-page/monitor.png" alt=""><div class="m-apps"><img src="images/about-page/fusion360.png" alt="Fusion 360"><img src="images/about-page/sketchup.png" alt="SketchUp"><img src="images/about-page/unity.png" alt="Unity"><img src="images/about-page/figma.png" alt="Figma"><img src="images/about-page/creative-cloud.png" alt="Creative Cloud"><img src="images/about-page/procreate.png" alt="Procreate"><img src="images/about-page/autocad.png" alt="AutoCAD"><img src="images/about-page/illustrator.png" alt="Illustrator"><img src="images/about-page/claude.png" alt="Claude"><img src="images/about-page/photoshop.png" alt="Photoshop"><img src="images/about-page/chatgpt.png" alt="ChatGPT"><img src="images/about-page/after-effects.png" alt="After Effects"><img src="images/about-page/premiere-pro.png" alt="Premiere Pro"><img src="images/about-page/keyshot.png" alt="KeyShot"><img src="images/about-page/vray.png" alt="V-Ray"></div></div>
+    <p>Every project starts with <mark>asking questions</mark>, then <mark>research, testing and iteration.</mark> I sketch in Procreate, design in Figma and Adobe Creative Cloud, build spaces and products in SketchUp, Fusion 360 and AutoCAD, and create immersive experiences in Unity. Claude and ChatGPT help me turn ideas into reality fast.</p>
+    <div class="m-pills"><span class="glass">Visual design</span><span class="glass">Space design</span><span class="glass">Retail design</span><span class="glass">Fixture design</span><span class="glass">Design Systems</span><span class="glass">Product design</span><span class="glass">Brand strategy</span><span class="glass">Content strategy</span><span class="glass">Experience design</span></div>
+  </section>
+  <section class="m-sec">
+    <h2>Selected <mark>Work.</mark></h2>
+    <div class="m-cards"><a href="index.html#work">Project 1</a><a href="index.html#work">Project 2</a><a href="index.html#work">Project 3</a><a href="index.html#work">Project 4</a><a href="index.html#work">Project 5</a><a href="index.html#work">Project 6</a></div>
+  </section>
+  <section class="m-sec m-band">
+    <h2>The journey <mark>so far...</mark></h2>
+    <ol class="m-route">
+      <li><b>A small town</b><span>Where noticing started</span></li>
+      <li><b>UPID, Noida</b><span>B.Des in Product Design</span></li>
+      <li><b>INRADA O.G.R.S, Chennai</b><span>A year in industry</span></li>
+      <li><b>NID Bangalore</b><span>M.Des in Retail Design, now</span></li>
+      <li><b>What’s next?</b><span>Graduation Project. Maybe the next stop is yours.</span></li>
+    </ol>
+  </section>
+</div>
 <nav class="dock" aria-label="Sections"><a href="index.html" data-nav="top"><svg class="me-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ffcb05"/><circle cx="12" cy="8.6" r="3.2" fill="#121212"/><path d="M6.2 19.2c.6-3.6 2.9-5.6 5.8-5.6s5.2 2 5.8 5.6" fill="#121212"/></svg>Home</a><a href="index.html#journey" data-nav="journey">Journey</a><a href="index.html#work" data-nav="work">Work</a><a href="about.html" data-nav="about" aria-current="page">About</a><a href="index.html#contact" data-nav="contact">Contact</a><a href="index.html#resume" data-nav="resume" class="cta">Resume<svg class="arr" viewBox="0 0 13 13" aria-hidden="true"><path d="M12 12V1H1M1 12 12 1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></nav>
 <div aria-hidden="true" style="height:104px"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
