@@ -15,7 +15,7 @@
   --ground:#f4f4f1;--ground-2:#e9e9e5;--ink:#121212;--ink-2:#4a4a47;--line:rgba(18,18,18,.16);
   --night:#141413;--night-2:#1d1d1b;--night-line:rgba(244,244,241,.14);--night-ink:#f4f4f1;--night-ink-2:#a9a9a3;
   --yellow:#ffcb05;--glow:255,200,0;--on-glow:#121212;
-  --display:'Geist','Helvetica Neue',Arial,sans-serif;--head:'Unbounded','Arial Black','Helvetica Neue',sans-serif;
+  --display:"Helvetica Neue",Helvetica,Arial,sans-serif;--head:"Helvetica Neue",Helvetica,Arial,sans-serif;
   --wrap:1280px;--gut:clamp(18px,4vw,48px);
   --ease:cubic-bezier(.2,.8,.2,1);
   color-scheme:light;box-sizing:border-box;
@@ -188,13 +188,13 @@ body.entered::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-ar
   background:repeating-linear-gradient(to bottom,transparent 0 calc(var(--rule) - 1px),rgba(0,0,0,.3) calc(var(--rule) - 1px) var(--rule)) 0 40px/100% calc(100% - 40px) no-repeat}
 .hand{font-family:var(--hand);font-weight:700;font-style:normal}
 .hl{background:linear-gradient(transparent 55%,var(--yellow) 55% 92%,transparent 92%);padding:0 .06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.intro h1{font:700 clamp(52px,11vw,84px)/.98 'Helvetica Neue',Helvetica,'Inter',Arial,sans-serif;letter-spacing:-.035em}
+.intro h1{font:700 clamp(52px,11vw,84px)/.98 var(--display);letter-spacing:-.035em}
 .intro h1>span{display:block}
 .intro h1 .hey{font-size:.615em}
 .intro h1 .hand{font-size:1.18em;letter-spacing:-.01em}
 .intro .name{position:relative;display:inline-block;white-space:nowrap}
 .intro .name .circle{position:absolute;left:-7%;top:-2%;width:114%;height:auto;pointer-events:none}
-.intro .lead{font:600 clamp(18px,2.6vw,22px)/1.32 'Inter',var(--display);margin:40px 0 0;max-width:36em}
+.intro .lead{font:600 clamp(18px,2.6vw,22px)/1.32 var(--display);margin:40px 0 0;max-width:36em}
 .intro .lead .hand{font-size:1.1em;line-height:1}
 .intro .lead strong.hand{font-size:1.18em}
 .intro .lead .hl-red{background:linear-gradient(transparent 50%,rgba(255,107,74,.5) 50% 92%,transparent 92%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
@@ -205,11 +205,11 @@ body.entered::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-ar
 .intro .facts::before{content:"";position:absolute;top:0;left:calc(-1*var(--gut));right:calc(-1*var(--gut));height:1px;background:var(--ink)}
 .intro .facts h3{font:700 30px/.98 var(--hand);letter-spacing:-.01em;margin:0 0 18px}
 .intro .facts h3 span{background:linear-gradient(transparent 55%,var(--yellow) 55% 100%);padding:0 .08em}
-.intro .facts p{margin:0;font:600 16px/1.45 'Inter',var(--display)}
+.intro .facts p{margin:0;font:600 16px/1.45 var(--display)}
 .intro .facts mark{background:rgba(47,127,216,.2);color:inherit;padding:0 .12em;border-radius:1px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .intro .find{position:relative;z-index:2;margin:36px 0 0}
 .intro .kw{gap:12px}
-.intro .kw button{font:600 15px/1 'Geist',var(--display);padding:12px 16px;border-radius:50px;border:1px solid rgba(255,255,255,.75);justify-content:center;white-space:nowrap;
+.intro .kw button{font:600 15px/1 var(--display);padding:12px 16px;border-radius:50px;border:1px solid rgba(255,255,255,.75);justify-content:center;white-space:nowrap;
   background:linear-gradient(164deg,rgba(255,255,255,.62) 0%,rgba(255,255,255,.28) 71%);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
   box-shadow:0 12px 16px -6px rgba(18,18,18,.28),inset 0 1px 0 rgba(255,255,255,.9)}
 .intro .kw button:hover{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
@@ -315,20 +315,20 @@ body.entered::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-ar
 .fly-in i::after{content:"";position:absolute;left:50%;top:4px;width:2px;height:6px;background:currentColor;transform:translateX(-50%);animation:drip 1.6s var(--ease) infinite}
 @media (max-width:640px){.fly-in{bottom:calc(80px + env(safe-area-inset-bottom,0px));font-size:14px;padding:10px 16px}}
 /* ---------- home, as laid out in Figma ---------- */
-.street,.street .chip,.street .bubble{font-family:'Inter',var(--display)}
+.street,.street .chip,.street .bubble{font-family:var(--display)}
 .badge2{position:absolute;z-index:5;left:clamp(16px,8.33vw,120px);top:calc(28px + env(safe-area-inset-top,0px));display:flex;align-items:center;gap:16px;padding:12px 14px 12px 16px;border-radius:50px;
   background:rgba(255,255,255,.40);
   background:linear-gradient(135deg,rgba(255,255,255,.48) 0%,rgba(255,255,255,.32) 100%);
   border:1.5px solid rgba(255,255,255,.78);
   box-shadow:0 12px 28px -6px rgba(0,0,0,.08),inset 0 1.5px 1.5px 0 rgba(255,255,255,1),inset 0 -1px 1px 0 rgba(255,255,255,.35),inset 0 0 16px rgba(255,255,255,.2)}
-.badge2 span{font:600 10px/1 'Inter',sans-serif;letter-spacing:.14em}
+.badge2 span{font:600 10px/1 var(--display);letter-spacing:.14em}
 .badge2 img{width:28px;height:28px;display:block}
 .night .badge2 img{filter:invert(1)}
 .street .hero-copy{left:clamp(16px,8.33vw,120px);top:calc(clamp(88px,15.9vh,143px) + env(safe-area-inset-top,0px));max-width:none;width:min(870px,calc(100vw - 2*clamp(16px,8.33vw,120px)));padding:22px 32px 26px 32px;border-radius:50px;pointer-events:none}
-.street .hero-copy .hey{font:600 17px/1.2 'Inter',sans-serif;margin:0 0 16px;text-shadow:none;display:block}
-.street .hero-copy .big{font:700 clamp(32px,3.75vw,54px)/1.04 'Helvetica Neue',Helvetica,'Inter',Arial,sans-serif;letter-spacing:-.04em;max-width:700px;text-shadow:none}
+.street .hero-copy .hey{font:600 17px/1.2 var(--display);margin:0 0 16px;text-shadow:none;display:block}
+.street .hero-copy .big{font:700 clamp(32px,3.75vw,54px)/1.04 var(--display);letter-spacing:-.04em;max-width:700px;text-shadow:none}
 .street .hero-copy .big mark{font-family:'Caveat',cursive;font-weight:700;font-size:1.18em;letter-spacing:0;background:linear-gradient(transparent 56%,rgba(var(--glow),.95) 56% 92%,transparent 92%);padding:0 .08em;color:inherit}
-.street .hero-copy .sub{font:500 19px/1.4 'Inter',sans-serif;margin:16px 0 0;max-width:470px;text-shadow:none}
+.street .hero-copy .sub{font:500 19px/1.4 var(--display);margin:16px 0 0;max-width:470px;text-shadow:none}
 .night .street .hero-copy .big mark,.night .hero-copy .big mark{color:#121212;background:var(--yellow);text-shadow:none;border-radius:6px}
 .street .ctrls{top:calc(25px + env(safe-area-inset-top,0px));right:clamp(16px,5vw,72px);gap:16px}
 .street .chip{height:52px;border-radius:26px;padding:0 19px 0 18px;gap:9px;font-size:16px;font-weight:600;
@@ -465,6 +465,37 @@ footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border
   .bubble{font-size:13.5px}
 }
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition-duration:.01ms!important}}
+
+/* dock: glass pill slides to the current / hovered item; Resume is glass with a yellow tint */
+nav.dock{isolation:isolate}
+nav.dock a{position:relative;z-index:1;background:transparent!important;transition:color .3s ease}
+nav.dock a:not(.cta){color:#121212!important}nav.dock a.at:not(.cta){color:#f4f4f1!important}
+nav.dock a.cta{color:#121212!important;background:linear-gradient(160deg,rgba(255,226,110,.78),rgba(255,203,5,.5))!important;
+  box-shadow:inset 0 1.5px 1px rgba(255,255,255,.9),inset 0 -1px 2px rgba(200,150,0,.35),0 0 0 1px rgba(255,255,255,.6),0 8px 18px -8px rgba(200,150,0,.45);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:transform .2s cubic-bezier(.22,1,.36,1),box-shadow .2s}
+nav.dock a.cta:active{transform:scale(.96)}
+.dock-ind{position:absolute;z-index:0;left:0;top:50%;height:calc(100% - 10px);width:0;border-radius:999px;pointer-events:none;opacity:0;
+  transform:translate(0,-50%);
+  background:linear-gradient(160deg,rgba(58,58,56,.72) 0%,rgba(12,12,12,.66) 55%,rgba(24,28,46,.72) 100%);
+  -webkit-backdrop-filter:blur(14px) saturate(170%) brightness(.85);backdrop-filter:blur(14px) saturate(170%) brightness(.85);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.35),inset 0 -1px 2px rgba(255,255,255,.08),0 0 0 1px rgba(255,255,255,.18),0 10px 22px -8px rgba(0,0,0,.45);
+  transition:transform .5s cubic-bezier(.22,1,.36,1),width .5s cubic-bezier(.22,1,.36,1),opacity .25s ease}
+.dock-ind::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;pointer-events:none;background:linear-gradient(150deg,rgba(255,255,255,.75),rgba(255,255,255,.08) 40%,rgba(160,185,255,.35) 75%,rgba(255,255,255,.55));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.dock-ind::after{content:"";position:absolute;left:12%;right:12%;top:2px;height:40%;border-radius:999px;background:linear-gradient(rgba(255,255,255,.28),rgba(255,255,255,0));pointer-events:none}
+nav.dock a{transition:color .35s cubic-bezier(.22,1,.36,1)!important}
+.night .dock-ind,:root[data-theme="dark"] .dock-ind{background:linear-gradient(160deg,rgba(255,255,255,.3),rgba(180,200,255,.12));
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.5),0 0 0 1px rgba(255,255,255,.25),0 8px 18px -8px rgba(0,0,0,.6)}
+.night nav.dock a:not(.cta),:root[data-theme="dark"] nav.dock a:not(.cta){color:#f4f4f1!important}
+@media (max-width:1040px){nav.dock a{padding-left:12px!important;padding-right:12px!important}nav.dock a[data-nav="top"],nav.dock a.cta{min-width:0!important}}
+@media (max-width:640px){nav.dock a{padding-left:7px!important;padding-right:7px!important;font-size:12px!important}nav.dock .me-ic,nav.dock .arr{display:none}}
+@media (prefers-reduced-motion:reduce){.dock-ind{transition:opacity .2s ease}}
+@media (prefers-reduced-transparency:reduce){.dock-ind{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}}
+
+/* type: only Helvetica Neue Bold, plus Figma Hand Bold for the handwritten bits */
+@font-face{font-family:"HN Bold";src:local("Helvetica Neue Bold"),local("HelveticaNeue-Bold");font-weight:700}
+@font-face{font-family:"Figma Hand";src:local("Figma Hand Bold"),local("FigmaHand-Bold"),local("Figma Hand");font-weight:700}
+body,body *{font-family:"HN Bold","Helvetica Neue",Helvetica,Arial,sans-serif!important;font-weight:700!important}
+.street .hero-copy .big mark,.m h1 em,.lc-note small{font-family:"Figma Hand","Caveat",cursive!important}
 </style>
 </head>
 <body>
@@ -480,7 +511,7 @@ footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border
     <button class="glass chip" id="playBtn" type="button" aria-pressed="false" aria-label="Pause the crowd"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></svg></span><span class="lb">Pause</span></button>
     <button class="glass chip" id="themeBtn" type="button" aria-pressed="false" aria-label="Switch to night"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></g></svg></span><span class="lb">Day</span></button>
   </div>
-  <nav class="glass dock" aria-label="Sections"><a href="#top" data-nav="top" aria-current="page"><svg class="me-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ffcb05"/><circle cx="12" cy="8.6" r="3.2" fill="#121212"/><path d="M6.2 19.2c.6-3.6 2.9-5.6 5.8-5.6s5.2 2 5.8 5.6" fill="#121212"/></svg>Home</a><a href="#journey" data-nav="journey">Journey</a><a href="#work" data-nav="work">Work</a><a href="about.html" data-nav="about">About</a><a href="#contact" data-nav="contact">Contact</a><a href="#resume" data-nav="resume" class="cta">Resume<svg class="arr" viewBox="0 0 13 13" aria-hidden="true"><path d="M12 12V1H1M1 12 12 1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></nav>
+  <nav class="glass dock" aria-label="Sections"><a href="#top" data-nav="top" aria-current="page"><svg class="me-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ffcb05"/><circle cx="12" cy="8.6" r="3.2" fill="#121212"/><path d="M6.2 19.2c.6-3.6 2.9-5.6 5.8-5.6s5.2 2 5.8 5.6" fill="#121212"/></svg>Home</a><a href="about.html" data-nav="about">About</a><a href="about.html#projects" data-nav="projects">Projects</a><a href="about.html#journey" data-nav="journey">Journey</a><a href="about.html#contact" data-nav="contact">Contact</a><a href="about.html#contact" data-nav="resume" class="cta">Resume<svg class="arr" viewBox="0 0 13 13" aria-hidden="true"><path d="M12 12V1H1M1 12 12 1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></nav>
   <span class="loader" aria-live="polite"><span id="pct">0</span>%</span>
   <button class="bubble glass" id="bubble" type="button" aria-label="Hi, I’m Utkarsh. Choose me to know more.">
     <span class="l1" aria-hidden="true"></span><span class="l2" aria-hidden="true"></span>
@@ -488,158 +519,6 @@ footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border
 </section>
 <div class="flash" id="flash"></div>
 
-<div id="site">
-  <nav class="glass dock" aria-label="Sections"><a href="#top" data-nav="top"><svg class="me-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ffcb05"/><circle cx="12" cy="8.6" r="3.2" fill="#121212"/><path d="M6.2 19.2c.6-3.6 2.9-5.6 5.8-5.6s5.2 2 5.8 5.6" fill="#121212"/></svg>Home</a><a href="#journey" data-nav="journey">Journey</a><a href="#work" data-nav="work">Work</a><a href="about.html" data-nav="about">About</a><a href="#contact" data-nav="contact">Contact</a><a href="#resume" data-nav="resume" class="cta">Resume<svg class="arr" viewBox="0 0 13 13" aria-hidden="true"><path d="M12 12V1H1M1 12 12 1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></nav>
-
-  <main>
-    <section class="night maps" id="maps" aria-labelledby="maps-h">
-      <div class="wrap">
-        <div class="sec-head"><h2 id="maps-h">Choose a map</h2><p>Five kinds of ground I design on. Pick one to see where I’ve played it.</p></div>
-        <div class="map-grid" id="mapGrid" role="group" aria-label="Design disciplines"></div>
-        <div class="map-detail" id="mapDetail" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section class="night loadout" id="loadout" aria-labelledby="load-h">
-      <div class="wrap">
-        <div class="sec-head"><h2 id="load-h">Loadout</h2><p>The tools I carry into every project.</p></div>
-        <div class="slots" id="slots"></div>
-      </div>
-    </section>
-
-    <section class="fly" id="journey" aria-labelledby="jr-h">
-      <div class="fly-stage">
-        <canvas id="flyCanvas" aria-hidden="true"></canvas>
-        <div class="fly-head"><h2 id="jr-h">The route so far</h2><p>Scroll to walk it with me.</p></div>
-        <div class="fly-tags" id="flyTags"></div>
-        <div class="glass fly-card" id="flyCard" aria-live="polite"></div>
-        <div class="fly-dots" id="flyDots" role="group" aria-label="Jump to a stop"></div>
-        <div class="glass fly-hint" id="flyHint"><i aria-hidden="true"></i>scroll to fly along</div>
-      </div>
-    </section>
-<section class="work" id="work" aria-labelledby="work-h">
-    <div class="wrap">
-      <div class="work-head">
-        <h2 id="work-h">Selected work</h2>
-        <div class="filters" id="kwWork" role="group" aria-label="Filter projects by discipline"></div>
-      </div>
-      <ul class="list" id="list">
-        <li class="proj" data-tags="brand visual content deck">
-          <button class="row" type="button" aria-expanded="false" aria-controls="p1">
-            <span class="t">Suto Katha</span><span class="hook">A Kantha brand built with the women who stitch it</span>
-            <span class="meta"></span><span class="yr">2026</span>
-          </button>
-          <div class="detail" id="p1" role="region"><div><div class="detail-in">
-            <div class="slot-img">Add the rebrand campaign and workshop photos here</div>
-            <div>
-              <p>Craft Studio is a Kantha and Batik social enterprise in the Sundarbans. I rebuilt it as Suto Katha (suto means thread, katha means story): brand purpose, personas, visual identity and the Instagram launch campaign.</p>
-              <p>I ran a three-day digital workshop in Hingalganj, teaching women artisans to shoot, edit and post their own work, and developed “Seen Through Touch”, a campaign for a line co-created with visually impaired artisans.</p>
-              <div class="tags"><span>Freelance</span><span>Identity</span><span>Campaign</span><span>Workshop</span><span>Packaging research</span></div>
-            </div>
-          </div></div></div>
-        </li>
-        <li class="proj" data-tags="retail space fixture product experience">
-          <button class="row" type="button" aria-expanded="false" aria-controls="p2">
-            <span class="t">The fish store</span><span class="hook">A store that tells new buyers what nobody told me</span>
-            <span class="meta"></span><span class="yr">2026</span>
-          </button>
-          <div class="detail" id="p2" role="region"><div><div class="detail-in">
-            <div class="slot-img">Add store visit photos, sketches and fixture renders here</div>
-            <div>
-              <p>Nobody told me that betta fish fight and need separate jars. Visiting ornamental fish stores, I found fish priced from ₹50 to lakhs with missing labels and no guidance on feeding or care.</p>
-              <p>This NID design project builds a buying experience that connects people with the fish, and a fixture with tanks that are easy to keep clean, because dirty water is what makes fish sick.</p>
-              <div class="tags"><span>NID design project</span><span>In progress</span><span>Store</span><span>Fixture</span></div>
-            </div>
-          </div></div></div>
-        </li>
-        <li class="proj" data-tags="retail space content visual">
-          <button class="row" type="button" aria-expanded="false" aria-controls="p3">
-            <span class="t">Anucriti</span><span class="hook">A Kolkata boutique finding its voice in Bangalore</span>
-            <span class="meta"></span><span class="yr">2026</span>
-          </button>
-          <div class="detail" id="p3" role="region"><div><div class="detail-in">
-            <div class="slot-img">Add the store, flyers and The Anucriti Show stills here</div>
-            <div>
-              <p>I designed a small boutique store for Anucriti and built its social presence from scratch: account audit, brand-matched flyers, a rollout plan and a content calendar woven around Bengali and Karnataka festivals.</p>
-              <p>I also shaped The Anucriti Show, unscripted conversations with customers, designing its intro and editing the episodes.</p>
-              <div class="tags"><span>Freelance</span><span>Store</span><span>Content strategy</span><span>Video</span></div>
-            </div>
-          </div></div></div>
-        </li>
-        <li class="proj" data-tags="brand">
-          <button class="row" type="button" aria-expanded="false" aria-controls="p4">
-            <span class="t">Broker Dekho</span><span class="hook">See the house, not the broker</span>
-            <span class="meta"></span><span class="yr">2026</span>
-          </button>
-          <div class="detail" id="p4" role="region"><div><div class="detail-in">
-            <div class="slot-img">Add campaign key visuals and the strategy board here</div>
-            <div>
-              <p>A campaign for NoBroker’s move into the Tricity: Chandigarh, Mohali and Panchkula. People there trust local brokers and word of mouth, so the brand had to earn trust and awareness from zero on a tight budget.</p>
-              <p>Working as the design agency in a three-person team, I planned the campaign against real acquisition targets set by the client side.</p>
-              <div class="tags"><span>NID class project</span><span>Campaign</span><span>Strategy</span></div>
-            </div>
-          </div></div></div>
-        </li>
-        <li class="proj" data-tags="brand deck">
-          <button class="row" type="button" aria-expanded="false" aria-controls="p5">
-            <span class="t">Yash Logistics</span><span class="hook">A spice exporter’s trucks, put to new work</span>
-            <span class="meta"></span><span class="yr">2026</span>
-          </button>
-          <div class="detail" id="p5" role="region"><div><div class="detail-in">
-            <div class="slot-img">Add the roadmap and key deck slides here</div>
-            <div>
-              <p>Yash Export has shipped spices since 1970 and runs trucks and drivers across port cities. I built the roadmap and pitch deck for Yash Logistics, a packers and movers brand using that fleet.</p>
-              <p>The plan includes a competitor analysis and answers the problems from the family’s earlier attempt at this market.</p>
-              <div class="tags"><span>Freelance</span><span>Strategy</span><span>Presentation</span></div>
-            </div>
-          </div></div></div>
-        </li>
-        <li class="proj" data-tags="visual">
-          <button class="row" type="button" aria-expanded="false" aria-controls="p6">
-            <span class="t">Layered Interpretations</span><span class="hook">People and a no-parking sign</span>
-            <span class="meta"></span><span class="yr">2026</span>
-          </button>
-          <div class="detail" id="p6" role="region"><div><div class="detail-in">
-            <div class="slot-img">Add the photo series here</div>
-            <div>
-              <p>A photo series on how people build a small world of activity around a sign that tells them not to stay there.</p>
-              <div class="tags"><span>NID, Science and Liberal Arts</span><span>Photography</span></div>
-            </div>
-          </div></div></div>
-        </li>
-        <li class="proj" data-tags="visual brand">
-          <button class="row" type="button" aria-expanded="false" aria-controls="p7">
-            <span class="t">ClotheQ</span><span class="hook">My own label for t-shirt graphics</span>
-            <span class="meta"></span><span class="yr">Ongoing</span>
-          </button>
-          <div class="detail" id="p7" role="region"><div><div class="detail-in">
-            <div class="slot-img">Add t-shirt graphics and mockups here</div>
-            <div>
-              <p>A personal label where I design graphics for t-shirts, from first sketch to final print.</p>
-              <div class="tags"><span>Personal</span><span>Graphics</span></div>
-            </div>
-          </div></div></div>
-        </li>
-      </ul>
-      <p class="empty" id="empty" hidden>Nothing in this filter yet. Try All.</p>
-    </div>
-  </section>
-<section class="contact" id="contact" aria-labelledby="contact-h">
-    <div class="wrap">
-      <h2 id="contact-h">Let’s make something people stop for.</h2>
-      <p>I take on retail and space design, brand and content work, and collaborations with studios and teams. I’m also open to my NID Graduation Project.</p>
-      <a class="btn" href="mailto:you@example.com">Write to me</a>
-      <div class="links">
-        <a href="#" aria-label="LinkedIn (link to be added)">LinkedIn</a>
-        <a href="#" aria-label="Instagram (link to be added)">Instagram</a>
-        <a href="#" aria-label="Behance (link to be added)">Behance</a>
-        <a href="#" aria-label="Résumé (link to be added)">Résumé</a>
-      </div>
-      <footer><span>u.design by Utkarsh, 2026</span><span>Clients include Suto Katha, Anucriti, Yash Exports and Sattva Mind Clinic</span></footer>
-    </div>
-  </section>
-  </main>
-</div>
 <script>
 (()=>{
 /* ================= sprites: realistic silhouettes with a charcoal edge ================= */
@@ -956,11 +835,7 @@ function enter(dest){
     wipe(flashInk,0,620);
     const a=wipe(flash,230,620);
     a.onfinish=()=>{
-      if(!dest||dest==='about'){location.href='about.html';return;}
-      document.body.classList.add('entered');running=false;scrollTo(0,0);layoutRoute();if(dest&&dest!=='about'){const el=document.getElementById(dest);if(el)el.scrollIntoView();}onScroll();
-      (document.getElementById(dest)||document.getElementById('maps')).focus({preventScroll:true});
-      flashInk.getAnimations().forEach(x=>x.cancel());
-      flash.animate([{opacity:1,clipPath:'circle(150% at 50% 50%)'},{opacity:0,clipPath:'circle(150% at 50% 50%)'}],{duration:RM?1:650,delay:100,fill:'forwards'});
+      location.href='about.html'+(dest&&dest!=='about'?'#'+dest:'');
     };
   },RM?0:950);
 }
@@ -982,17 +857,12 @@ themeBtn.addEventListener('click',()=>{night=!night;if(night)buildNight();street
   themeBtn.querySelector('.ic').innerHTML=night?MOON:SUN;themeBtn.querySelector('.lb').textContent=night?'Night':'Day';});
 // docks: on the street every link walks you in; inside, links scroll and Home walks you back out
 street.querySelectorAll('.dock a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const t=a.dataset.nav;if(t==='top')return;enter(t==='resume'?'contact':t);}));
-document.querySelectorAll('#site .dock a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const t=a.dataset.nav;
-  if(t==='top'){leave();return;}if(t==='about'){location.href='about.html';return;}const el=document.getElementById(t==='resume'?'contact':t);if(el)el.scrollIntoView({behavior:RM?'auto':'smooth'});}));
-const siteLinks=[...document.querySelectorAll('#site .dock a')];
-const spy=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){const id=en.target.id;siteLinks.forEach(a=>a.classList.toggle('on',a.dataset.nav===id||(id==='maps'||id==='loadout')&&a.dataset.nav==='about'));}});},{rootMargin:'-45% 0px -50% 0px'});
-['about','maps','loadout','journey','work','contact'].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
 ['hero-copy','ctrls','badge2'].forEach(c=>{const el=street.querySelector('.'+c);el.addEventListener('click',e=>e.stopPropagation());});
 street.addEventListener('click',e=>{const r=street.getBoundingClientRect();if(heroHit(e.clientX-r.left,e.clientY-r.top))enter();});
 function mv(e){const r=street.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;P.tx=x;P.ty=y;P.last=performance.now();
   street.style.cursor=heroHit(x,y)?'pointer':'default';}
 street.addEventListener('pointermove',mv,{passive:true});street.addEventListener('pointerdown',mv,{passive:true});
-addEventListener('resize',()=>{resize();if(document.body.classList.contains('entered'))layoutRoute();});
+addEventListener('resize',resize);
 
 let last=performance.now(),shown=-1;
 function frame(now){
@@ -1003,158 +873,26 @@ function frame(now){
   if(running){update(dt,now);draw(now);if(state==='street')placeBubble();}
   requestAnimationFrame(frame);
 }
-/* ================= the site ================= */
-// maps
-const MAPS=[
-  {nm:'Retail & Spaces',terrain:'Stores, fixtures, displays and the walk through them',
-   desc:'I start with store visits and watch how people actually shop, then design the fixtures and moments that make them stop and understand.',
-   played:['The fish store, NID design project','Anucriti boutique, Bangalore']},
-  {nm:'Brand & Content',terrain:'Names, identities, calendars and campaigns',
-   desc:'I give small brands a clear voice: what they’re called, how they look, what they post and when.',
-   played:['Suto Katha rebrand and launch','Anucriti social presence','Broker Dekho campaign']},
-  {nm:'Products',terrain:'Objects shaped around how people use them',
-   desc:'Trained as a product designer, I care about how a thing is held, cleaned, carried and kept.',
-   played:['B.Des in Product Design, UPID','Easy-clean tank fixture, fish store']},
-  {nm:'UI, UX & Experience',terrain:'Screens, journeys and interactive pieces',
-   desc:'I design screens as one part of a bigger experience, from the first moment to the last.',
-   played:['This website','Unity AR and VR experiments']},
-  {nm:'Decks & Presentations',terrain:'Pitches, proposals and workshop decks',
-   desc:'I turn plans into decks that are easy to follow and easy to say yes to.',
-   played:['Yash Logistics pitch deck','Digital Didi workshop deck','Suto Katha campaign decks']}
-];
-function terrain(sd){
-  seed(sd*7919+3);let o='<svg viewBox="0 0 200 130" aria-hidden="true">';
-  for(let x=20;x<200;x+=20)o+=`<line x1="${x}" y1="0" x2="${x}" y2="130" stroke="rgba(244,244,241,.05)"/>`;
-  for(let y=20;y<130;y+=20)o+=`<line x1="0" y1="${y}" x2="200" y2="${y}" stroke="rgba(244,244,241,.05)"/>`;
-  const hills=[];for(let h=0;h<3;h++)hills.push({x:30+R()*140,y:25+R()*80,r:26+R()*26,a:R()*6,b:R()*6});
-  for(const h of hills)for(let k=6;k>=1;k--){let d='';const rr=h.r*k/6;
-    for(let i=0;i<=36;i++){const a=i/36*TAU,m=1+.2*Math.sin(a*2+h.a)+.1*Math.sin(a*3+h.b+k*.3);d+=(i?'L':'M')+(h.x+Math.cos(a)*rr*m).toFixed(1)+' '+(h.y+Math.sin(a)*rr*m*.75).toFixed(1);}
-    o+=`<path d="${d}Z" fill="none" stroke="rgba(244,244,241,${(.1+k*.035).toFixed(2)})" stroke-width="1"/>`;}
-  const a=hills[0],b=hills[1];
-  o+=`<path d="M8 ${120} Q ${b.x} ${b.y+30} ${a.x} ${a.y}" fill="none" stroke="rgba(255,203,5,.55)" stroke-width="1.4" stroke-dasharray="3 4"/>`;
-  o+=`<circle cx="${a.x}" cy="${a.y}" r="7" fill="rgba(255,203,5,.2)"/><circle cx="${a.x}" cy="${a.y}" r="3.2" fill="#ffcb05"/></svg>`;
-  return o;
-}
-const grid=document.getElementById('mapGrid'),det=document.getElementById('mapDetail');
-MAPS.forEach((m,i)=>{const b=document.createElement('button');b.type='button';b.className='map';b.setAttribute('aria-pressed',i===0);
-  b.innerHTML=terrain(i+1)+`<span class="meta"><span class="code">MAP 0${i+1}</span><span class="nm">${m.nm}</span></span>`;
-  b.addEventListener('click',()=>pickMap(i));grid.appendChild(b);});
-function pickMap(i){const m=MAPS[i];[...grid.children].forEach((b,j)=>b.setAttribute('aria-pressed',i===j));
-  det.innerHTML=`<div><h3>${m.nm}</h3><div class="terrain">${m.terrain}</div><p>${m.desc}</p></div><div><h4>Where I’ve played it</h4><ul>${m.played.map(p=>`<li>${p}</li>`).join('')}</ul></div>`;
-  det.classList.remove('swap');void det.offsetWidth;det.classList.add('swap');}
-pickMap(0);
-
-// loadout
-const LOGOS={"Figma": "M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z", "Framer": "M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z", "Rhino": "M6.823 3.103c-.1 0-.213.006-.34.017-.511.044-1.25.18-1.802.329a6.269 6.269 0 0 0-1.15.42c-.231.112-.33.178-.354.273-.023.094.028.217.16.436s.346.533.535.961c.19.428.356.97.361 1.651.006.68-.149 1.5-.245 1.962-.096.462-.133.568-.227.618-.094.05-.245.044-.525-.021-.281-.065-.69-.187-1.1-.259-.41-.072-.819-.093-1.122-.038-.304.056-.504.189-.645.369-.14.18-.224.406-.282.75A6.957 6.957 0 0 0 0 11.687c.005.317.047.49.136.584.088.094.223.109.492.054s.672-.18 1.224-.215a6.302 6.302 0 0 1 1.94.202c.685.182 1.353.49 1.95.93.598.438 1.127 1.007 1.566 1.593.438.586.787 1.189 1.004 1.541.217.353.304.455.372.42.068-.035.117-.207.145-.417a3.141 3.141 0 0 0-.02-.848 7.467 7.467 0 0 0-.32-1.365 5.617 5.617 0 0 0-.495-1.018c-.146-.247-.241-.408-.245-.51-.004-.103.085-.148.51-.315.424-.167 1.185-.457 1.958-.808.772-.351 1.556-.764 2.042-1.106.486-.341.674-.61.724-.937.05-.326-.039-.71-.16-1.076a6.93 6.93 0 0 0-.529-1.193A13.696 13.696 0 0 0 11.28 5.6a9.187 9.187 0 0 0-1.1-1.236c-.282-.255-.421-.31-.51-.29-.09.02-.131.115-.168.47-.037.356-.07.973-.144 1.559a7.468 7.468 0 0 1-.432 1.773 12.543 12.543 0 0 1-.99 1.982c-.388.64-.803 1.212-1.054 1.462-.25.25-.336.18-.477.064l-.486-.4c-.15-.125-.253-.213-.273-.293-.02-.08.045-.15.27-.448.227-.299.615-.825.96-1.478a7.75 7.75 0 0 0 .796-2.282 10.1 10.1 0 0 0 .095-2.338c-.044-.564-.124-.77-.306-.896-.137-.095-.332-.146-.638-.146zm6.48 7.034h-.012c-.084.01-.192.112-.415.294a6.86 6.86 0 0 1-1.017.7c-.458.257-1.038.507-1.51.734-.47.226-.831.429-1.004.712-.172.283-.155.648.04.85.194.204.566.246.883.259.318.013.58-.002.826.087.246.09.475.285.764.516.288.23.637.498.925.561.289.063.518-.079.766-.202.249-.124.516-.23.888-.225.371.005.847.12 1.318.37.47.248.938.63 1.184.866.247.236.272.327.245.362-.028.036-.108.018-.304-.14-.196-.157-.508-.454-.917-.688-.41-.234-.916-.404-1.4-.391-.482.013-.94.21-1.23.55-.29.34-.412.822-.546 1.164-.133.341-.28.543-.47.617-.19.074-.424.02-.703-.099-.28-.12-.604-.307-.874-.442-.269-.136-.484-.22-.62-.353-.136-.132-.195-.31-.203-.571-.01-.26.032-.6.05-.853.02-.25.018-.413-.038-.56a1.079 1.079 0 0 0-.232-.35c-.07-.07-.099-.075-.113-.058-.014.017-.012.058.01.158.023.1.067.26.05.581-.019.321-.098.803-.16 1.17-.062.366-.107.618-.02.808.087.191.306.322.707.54.4.22.982.527 1.518.855.537.327 1.027.673 1.562 1.089.534.415 1.112.9 1.5 1.238.39.339.588.532.742.59.154.059.264-.018.307-.138.044-.12.023-.285-.014-.429a1.174 1.174 0 0 0-.24-.46 4.92 4.92 0 0 0-.68-.704c-.287-.243-.614-.463-.803-.614-.19-.151-.242-.233-.212-.259.03-.026.14.004.302.108.162.103.375.28.612.459.237.178.499.356.733.584.235.228.443.506.583.706.14.201.214.324.294.372.08.049.165.022.277-.05a3.03 3.03 0 0 0 .426-.355c.178-.169.398-.393.551-.633.154-.24.242-.496.299-.772.056-.276.08-.572.247-.862.167-.29.476-.574.994-1.025.518-.451 1.244-1.07 1.891-1.664.648-.595 1.216-1.165 1.696-1.802.479-.638.87-1.342 1.067-1.743.199-.4.205-.498.14-.526-.063-.027-.198.015-.61.313-.414.297-1.106.849-1.886 1.43-.781.58-1.65 1.19-2.336 1.569-.686.378-1.19.524-1.55.562-.361.037-.58-.034-.724-.11-.143-.077-.21-.158-.224-.241-.013-.084.03-.17.135-.275.106-.106.277-.232.447-.392.17-.16.338-.354.468-.556.13-.202.22-.411.261-.592.042-.181.034-.333-.04-.376-.074-.043-.215.023-.376.11-.162.086-.343.192-.593.3a2.683 2.683 0 0 1-.92.235 1.626 1.626 0 0 1-1.088-.313c-.343-.26-.635-.71-.866-1.147-.23-.438-.398-.865-.512-1.12-.108-.242-.168-.33-.246-.33zm-2.215 4.075a.422.422 0 0 0-.294.115c-.094.086-.145.2-.034.338.112.137.385.297.636.469.252.172.481.357.666.42.184.064.323.006.402-.096.08-.102.1-.247-.003-.404-.103-.157-.327-.325-.564-.481-.238-.157-.488-.302-.681-.346a.574.574 0 0 0-.128-.015zm.252.208c.025 0 .053.003.083.01.118.026.272.115.418.211.145.096.283.2.333.289.05.089.014.163-.048.216a.255.255 0 0 1-.247.053c-.1-.031-.216-.126-.36-.219-.145-.093-.319-.184-.387-.268-.068-.084-.031-.162.029-.218a.26.26 0 0 1 .18-.074zm4.778 3.728c.211-.008.42.06.602.24.183.178.34.467.383.732.042.265-.03.505-.125.692a1.58 1.58 0 0 1-.289.397c-.074.074-.109.095-.14.095h-.003c-.033-.001-.062-.023-.208-.171a7.39 7.39 0 0 1-.573-.642c-.165-.22-.232-.383-.263-.568-.032-.185-.027-.39.082-.536.109-.146.323-.23.534-.239zm.093 1.111a.258.258 0 0 0-.153.046c-.058.041-.105.113-.093.185.012.073.085.146.174.255.089.11.195.255.264.335.068.08.1.093.127.091.029-.002.054-.018.086-.048a.349.349 0 0 0 .094-.157.518.518 0 0 0 .002-.316.668.668 0 0 0-.218-.282.476.476 0 0 0-.283-.109z", "SketchUp": "M.968 9.027l7.717 4.428-.006 1.32-4.39-2.518-2.763 1.57 7.148 4.12.005 1.27-7.658-4.405c.02.516.488 2.106 1.383 3.337.91 1.247 1.946 1.776 1.946 1.776L11.428 24V11.849L.975 5.846zm22.064-3.8L15.22.723S13.982 0 12.008 0C9.952 0 8.76.746 8.76.746l-7.236 4.14 11.009 6.328V24l7.245-4.136s1.295-.715 2.279-2.414c.867-1.496.975-2.943.975-2.943zM11.251 7.308s1.615-.298 2.98.49l2.171 1.25s.003 1.097.003 2.736c0 1.313-1.112 2.674-1.112 2.674l.002-4.816zm6.402 10.562l-2.358 1.353v-1.269l1.835-1.05c1.748-1.26 2.037-3.117 2.037-3.761l-.007-5.705-5.006-2.881s-.76-.499-2.129-.499c-1.367 0-2.113.461-2.113.461L8.154 5.53l-1.11-.641L9.473 3.5s.95-.527 2.544-.527c1.462 0 2.6.571 2.6.571L20.27 6.81l-.007 6.226c.04.957-.406 3.296-2.61 4.835z", "Blender": "M12.51 13.214c.046-.8.438-1.506 1.03-2.006a3.424 3.424 0 0 1 2.212-.79c.85 0 1.631.3 2.211.79.592.5.983 1.206 1.028 2.005.045.823-.285 1.586-.865 2.153a3.389 3.389 0 0 1-2.374.938 3.393 3.393 0 0 1-2.376-.938c-.58-.567-.91-1.33-.865-2.152M7.35 14.831c.006.314.106.922.256 1.398a7.372 7.372 0 0 0 1.593 2.757 8.227 8.227 0 0 0 2.787 2.001 8.947 8.947 0 0 0 3.66.76 8.964 8.964 0 0 0 3.657-.772 8.285 8.285 0 0 0 2.785-2.01 7.428 7.428 0 0 0 1.592-2.762 6.964 6.964 0 0 0 .25-3.074 7.123 7.123 0 0 0-1.016-2.779 7.764 7.764 0 0 0-1.852-2.043h.002L13.566 2.55l-.02-.015c-.492-.378-1.319-.376-1.86.002-.547.382-.609 1.015-.123 1.415l-.001.001 3.126 2.543-9.53.01h-.013c-.788.001-1.545.518-1.695 1.172-.154.665.38 1.217 1.2 1.22V8.9l4.83-.01-8.62 6.617-.034.025c-.813.622-1.075 1.658-.563 2.313.52.667 1.625.668 2.447.004L7.414 14s-.069.52-.063.831zm12.09 1.741c-.97.988-2.326 1.548-3.795 1.55-1.47.004-2.827-.552-3.797-1.538a4.51 4.51 0 0 1-1.036-1.622 4.282 4.282 0 0 1 .282-3.519 4.702 4.702 0 0 1 1.153-1.371c.942-.768 2.141-1.183 3.396-1.185 1.256-.002 2.455.41 3.398 1.175.48.391.87.854 1.152 1.367a4.28 4.28 0 0 1 .522 1.706 4.236 4.236 0 0 1-.239 1.811 4.54 4.54 0 0 1-1.035 1.626", "Unity": "m12.9288 4.2939 3.7997 2.1929c.1366.077.1415.2905 0 .3675l-4.515 2.6076a.4192.4192 0 0 1-.4246 0L7.274 6.8543c-.139-.0745-.1415-.293 0-.3675l3.7972-2.193V0L1.3758 5.5977V16.793l3.7177-2.1456v-4.3858c-.0025-.1565.1813-.2682.318-.1838l4.5148 2.6076a.4252.4252 0 0 1 .2136.3676v5.2127c.0025.1565-.1813.2682-.3179.1838l-3.7996-2.1929-3.7178 2.1457L12 24l9.6954-5.5977-3.7178-2.1457-3.7996 2.1929c-.1341.082-.3229-.0248-.3179-.1838V13.053c0-.1565.087-.2956.2136-.3676l4.5149-2.6076c.134-.082.3228.0224.3179.1838v4.3858l3.7177 2.1456V5.5977L12.9288 0Z"};
-const TOOLS=[['Figma','Interfaces, prototypes and decks'],['Framer','Websites and interactive prototypes'],['Adobe Creative Cloud','Identity, layout, photo and video','Cc'],
-  ['Rhino','Product and fixture modelling'],['SketchUp','Store and space planning'],['Blender','3D visuals and renders'],['Unity','AR and VR experiments'],['More tools','The rest of the kit, coming soon','+']];
-const slotsEl=document.getElementById('slots');
-slotsEl.innerHTML=TOOLS.map((t,i)=>{const lg=LOGOS[t[0]];const mark=lg?`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${lg}"/></svg>`:`<b aria-hidden="true">${t[2]}</b>`;
-  return `<div class="slot${t[2]==='+'?' more':''}" style="--d:${i*110}ms"><span class="no">${String(i+1).padStart(2,'0')}</span><span class="mono">${mark}</span><strong>${t[0]}</strong><span class="use">${t[1]}</span></div>`;}).join('');
-new IntersectionObserver((es,o)=>{es.forEach(en=>{if(en.isIntersecting){slotsEl.querySelectorAll('.slot').forEach(s=>s.classList.add('lap'));o.disconnect();}});},{threshold:.35}).observe(slotsEl);
-
-// journey: fly along the road through the places Utkarsh has been
-const fly=document.getElementById('journey'),fcv=document.getElementById('flyCanvas'),fctx=fcv.getContext('2d');
-const flyCard=document.getElementById('flyCard'),flyTags=document.getElementById('flyTags'),flyDots=document.getElementById('flyDots'),flyHint=document.getElementById('flyHint');
-const STOPS=[
-  {name:'A small town',tag:'Start',title:'Where noticing started',text:'I grew up in a small town. It’s where I started paying attention to how people use the things around them.',x:420,y:1320,kind:'town'},
-  {name:'UPID, Noida',tag:'B.Des',title:'Learning to make things',text:'A bachelor’s in Product Design at UPID, Noida taught me to shape objects around the people who use them.',x:1060,y:640,kind:'campus'},
-  {name:'Inrada, Chennai',tag:'1 year',title:'A year in industry',text:'I spent a year at Inrada in Chennai, working on real projects with real clients and real constraints.',x:1760,y:1260,kind:'office'},
-  {name:'NID Bangalore',tag:'Now',title:'Designing for retail',text:'Now I’m doing a master’s in Retail Design at NID Bangalore: stores, fixtures and the experiences inside them.',x:2460,y:600,kind:'nid'},
-  {name:'What’s next?',tag:'Next',title:'The next stop is open',text:'Studios, brands and teams: projects, collaborations and my NID Graduation Project. Maybe the next stop is yours.',x:3060,y:1120,kind:'door'}];
-// the road: a smooth curve through every stop
-const ctrl=[[80,1560],...STOPS.map(s=>[s.x,s.y]),[3420,860]];
-const road=[];for(let i=0;i<ctrl.length-1;i++){const p0=ctrl[i-1]||ctrl[i],p1=ctrl[i],p2=ctrl[i+1],p3=ctrl[i+2]||p2;
-  for(let k=0;k<40;k++){const t=k/40,t2=t*t,t3=t2*t;road.push([.5*((2*p1[0])+(-p0[0]+p2[0])*t+(2*p0[0]-5*p1[0]+4*p2[0]-p3[0])*t2+(-p0[0]+3*p1[0]-3*p2[0]+p3[0])*t3),.5*((2*p1[1])+(-p0[1]+p2[1])*t+(2*p0[1]-5*p1[1]+4*p2[1]-p3[1])*t2+(-p0[1]+3*p1[1]-3*p2[1]+p3[1])*t3)]);}}
-road.push(ctrl[ctrl.length-1]);
-const cum=[0];for(let i=1;i<road.length;i++)cum.push(cum[i-1]+Math.hypot(road[i][0]-road[i-1][0],road[i][1]-road[i-1][1]));
-const stopLen=STOPS.map((s,i)=>cum[(i+1)*40]);
-const at=L=>{let lo=0,hi=cum.length-1;while(hi-lo>1){const m=(lo+hi)>>1;if(cum[m]<L)lo=m;else hi=m;}const t=(L-cum[lo])/((cum[hi]-cum[lo])||1);return[road[lo][0]+(road[hi][0]-road[lo][0])*t,road[lo][1]+(road[hi][1]-road[lo][1])*t];};
-// people along the road
-const walkers=[];{let q=3;const r=()=>{q=(q*16807)%2147483647;return q/2147483647;};
-  for(let i=0;i<42;i++){const L=r()*cum[cum.length-1],p=at(L),side=r()<.5?-1:1;walkers.push({t:(i*5)%TYPES.length,bx:p[0]+(r()-.5)*160,by:p[1]+side*(70+r()*120),amp:20+r()*50,sp:.15+r()*.3,ph:r()*6.28,face:1});}}
-const blobs=[];{let q=17;const r=()=>{q=(q*16807)%2147483647;return q/2147483647;};for(let i=0;i<9;i++)blobs.push([r()*3400,200+r()*1500,120+r()*220]);}
-const stopEls=STOPS.map((s,i)=>{const b=document.createElement('button');b.type='button';b.className='glass fly-tag';b.innerHTML=`${s.name}<em>${s.tag}</em>`;b.addEventListener('click',()=>goStop(i));flyTags.appendChild(b);return b;});
-const dotEls=STOPS.map((s,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',s.name);b.addEventListener('click',()=>goStop(i));flyDots.appendChild(b);return b;});
-function goStop(i){const top=fly.offsetTop+(i/(STOPS.length-1))*(fly.offsetHeight-innerHeight)+2;scrollTo({top,behavior:RM?'auto':'smooth'});}
-let FW=0,FH=0,FD=1,curStop=-1,flyOn=false;
-function layoutRoute(){FW=fcv.clientWidth;FH=fcv.clientHeight;if(!FW)return;FD=Math.min(2,devicePixelRatio||1);fcv.width=Math.round(FW*FD);fcv.height=Math.round(FH*FD);}
-function onScroll(){}
-const ink=a=>`rgba(18,18,18,${a})`;
-function drawPlace(c,s,i,lit){const x=s.x,y=s.y-70,win=lit?'#ffcb05':'#f4f4f1';
-  const box=(bx,by,w,h,tone)=>{c.fillStyle=tone;c.fillRect(bx,by-h,w,h);};
-  const wins=(bx,by,w,h,cols,rows,mw=.5)=>{c.fillStyle=win;const cw=w/cols,ch=h/rows;for(let a=0;a<cols;a++)for(let b=0;b<rows;b++)c.fillRect(bx+a*cw+cw*(1-mw)/2,by-h+b*ch+ch*.25,cw*mw,ch*.45);};
-  const tree=(tx,ty,r,tone)=>{c.fillStyle=tone;c.fillRect(tx-3,ty-r*1.6,6,r*1.6);c.beginPath();c.arc(tx,ty-r*1.9,r,0,TAU);c.fill();};
-  if(s.kind==='town'){[[-150,70,60,'#2a2927'],[-70,90,80,'#1b1b1a'],[30,70,64,'#34332f']].forEach(([dx,w,h,t])=>{box(x+dx,y,w,h,t);c.beginPath();c.moveTo(x+dx-8,y-h);c.lineTo(x+dx+w/2,y-h-38);c.lineTo(x+dx+w+8,y-h);c.fill();c.fillStyle=win;c.fillRect(x+dx+w*.35,y-h*.55,w*.3,h*.3);});
-    tree(x+130,y,30,'#202020');c.fillStyle='#3a3936';c.fillRect(x+170,y-150,6,150);c.fillRect(x+188,y-150,6,150);c.fillRect(x+160,y-190,44,40);}
-  if(s.kind==='campus'){box(x-200,y,400,120,'#242423');c.fillStyle=lit?'rgba(255,203,5,.9)':'#f4f4f1';for(let a=0;a<6;a++){const ax=x-180+a*64;c.beginPath();c.moveTo(ax,y);c.lineTo(ax,y-60);c.arc(ax+20,y-60,20,Math.PI,0);c.lineTo(ax+40,y);c.fill();}
-    box(x-60,y-120,120,70,'#1b1b1a');wins(x-60,y-120,120,70,4,1);c.fillStyle='#121212';c.fillRect(x+150,y-260,4,140);c.fillStyle=lit?'#ffcb05':'#3a3936';c.fillRect(x+154,y-260,46,28);}
-  if(s.kind==='office'){c.strokeStyle=ink(.12);c.lineWidth=3;for(let a=0;a<4;a++){c.beginPath();c.moveTo(x-320,y-250+a*14);c.lineTo(x+320,y-250+a*14);c.stroke();}
-    box(x-170,y,260,190,'#1e1d1c');wins(x-170,y,260,190,6,4);box(x+90,y,110,130,'#2f2f2c');wins(x+90,y,110,130,2,3);
-    for(const px of[x-230,x+240]){c.strokeStyle='#202020';c.lineWidth=7;c.beginPath();c.moveTo(px,y);c.quadraticCurveTo(px+14,y-90,px+4,y-170);c.stroke();c.lineWidth=5;for(let a=0;a<5;a++){const an=-2.6+a*.55;c.beginPath();c.moveTo(px+4,y-170);c.quadraticCurveTo(px+4+Math.cos(an)*40,y-170+Math.sin(an)*40-10,px+4+Math.cos(an)*70,y-170+Math.sin(an)*70+20);c.stroke();}}}
-  if(s.kind==='nid'){box(x-220,y,440,150,'#161616');c.fillStyle=lit?'rgba(255,203,5,.85)':'#e9e9e5';c.fillRect(x-200,y-130,250,90);c.fillStyle='#161616';for(let a=1;a<5;a++)c.fillRect(x-200+a*50-2,y-130,4,90);
-    box(x+70,y,130,220,'#2c2b29');wins(x+70,y,130,220,3,5);tree(x-270,y,40,'#1e1d1c');tree(x+260,y,34,'#2a2927');tree(x+310,y,26,'#1b1b1a');}
-  if(s.kind==='door'){const g=c.createRadialGradient(x,y-120,10,x,y-120,220);g.addColorStop(0,`rgba(255,200,0,${lit?.45:.15})`);g.addColorStop(1,'rgba(255,200,0,0)');c.fillStyle=g;c.beginPath();c.arc(x,y-120,220,0,TAU);c.fill();
-    c.strokeStyle='#ffcb05';c.lineWidth=10;c.strokeRect(x-60,y-230,120,230);c.fillStyle=ink(.85);c.font='800 90px Unbounded, Arial Black, sans-serif';c.textAlign='center';c.fillText('?',x,y-80);c.textAlign='left';}
-}
-function drawFly(now){
-  if(!FW)layoutRoute();if(!FW)return;
-  const r=fly.getBoundingClientRect(),span=fly.offsetHeight-innerHeight,p=Math.max(0,Math.min(1,-r.top/span));
-  const n=STOPS.length-1,sgm=p*n,i=Math.min(n-1,Math.floor(sgm)),f=sgm-i,g=f<.22?0:f>.78?1:(u=>u*u*(3-2*u))((f-.22)/.56);
-  const L=stopLen[i]+(stopLen[i+1]-stopLen[i])*g,cam=at(L),moving=g>0&&g<1;
-  const zs=Math.min(FW,FH)/820,z=zs*(1.15-.42*Math.sin(Math.PI*g)),ox=FW*(FW<700?.5:.58),oy=FH*.6;
-  const P=(wx,wy)=>[ox+(wx-cam[0])*z,oy+(wy-cam[1])*z];
-  fctx.setTransform(FD,0,0,FD,0,0);fctx.fillStyle='#f4f4f1';fctx.fillRect(0,0,FW,FH);
-  fctx.save();fctx.translate(ox,oy);fctx.scale(z,z);fctx.translate(-cam[0],-cam[1]);
-  fctx.strokeStyle=ink(.06);fctx.lineWidth=2/z;for(const[bx,by,br]of blobs)for(let k=1;k<=4;k++){fctx.beginPath();fctx.ellipse(bx,by,br*k/4,br*k/4*.62,0,0,TAU);fctx.stroke();}
-  const trace=(upto,w,col,dash)=>{fctx.beginPath();fctx.moveTo(road[0][0],road[0][1]);for(let k=1;k<road.length&&cum[k]<=upto;k++)fctx.lineTo(road[k][0],road[k][1]);if(upto<cum[cum.length-1]){const e=at(upto);fctx.lineTo(e[0],e[1]);}
-    fctx.lineWidth=w;fctx.strokeStyle=col;fctx.setLineDash(dash||[]);fctx.lineCap='round';fctx.lineJoin='round';fctx.stroke();fctx.setLineDash([]);};
-  const total=cum[cum.length-1];trace(total,92,ink(.1));trace(total,84,'#e7e6e0');trace(total,3,ink(.3),[18,18]);trace(L,7,'#ffcb05');
-  const cs=Math.round(i+g);
-  const items=[];STOPS.forEach((s,k)=>items.push({y:s.y-70,draw:()=>drawPlace(fctx,s,k,k<=cs)}));
-  const t=now/1000;for(const w of walkers){const ox2=Math.sin(t*w.sp+w.ph)*w.amp,vx=Math.cos(t*w.sp+w.ph);w.face=vx>0?1:-1;const x=w.bx+ox2,y=w.by;
-    items.push({y,draw:()=>{const set=SPR[w.t],fr=set[Math.floor((((t*w.sp*9+w.ph)%TAU)+TAU)%TAU/TAU*WF)%WF];const sc=.62*TYPES[w.t].h;fctx.save();fctx.globalAlpha=.24;fctx.translate(x,y);fctx.transform(sc*w.face*SUNL.dy*.8+sc*w.face*.25,sc*w.face*-SUNL.dx*.45,-SUNL.len*SUNL.dx*sc,-SUNL.len*SUNL.dy*sc,0,0);fctx.drawImage(fr.base,-SW/2,-(SH-BASE),SW,SH);fctx.restore();fctx.save();fctx.translate(x,y);fctx.scale(sc*w.face,sc);fctx.drawImage(fr.base,-SW/2,-(SH-BASE),SW,SH);fctx.restore();}});}
-  items.push({y:cam[1]+1,draw:()=>{const bob=moving?Math.abs(Math.sin(t*8))*4:0,sc=.78;const gg=fctx.createRadialGradient(cam[0],cam[1]-70,4,cam[0],cam[1]-70,150);gg.addColorStop(0,'rgba(255,200,0,.4)');gg.addColorStop(1,'rgba(255,200,0,0)');
-    fctx.fillStyle=gg;fctx.beginPath();fctx.arc(cam[0],cam[1]-70,150,0,TAU);fctx.fill();fctx.save();fctx.shadowColor='rgba(255,200,0,.8)';fctx.shadowBlur=18;fctx.translate(cam[0],cam[1]-bob);fctx.scale(sc,sc);fctx.drawImage(HSPR[0],-SW/2,-(SH-BASE),SW,SH);fctx.restore();}});
-  items.sort((a,b)=>a.y-b.y).forEach(it=>it.draw());
-  fctx.restore();
-  STOPS.forEach((s,k)=>{const[sx,sy]=P(s.x,s.y-(s.kind==='door'?330:300));const el=stopEls[k];el.style.transform=`translate(${sx}px,${sy}px) translate(-50%,-100%)`;el.classList.toggle('on',k===cs);el.style.opacity=(sx<-150||sx>FW+150||sy<-60||sy>FH+60)?0:1;});
-  if(cs!==curStop){curStop=cs;const s=STOPS[cs];flyCard.innerHTML=`<div class="in"><span class="no">0${cs+1} / 0${STOPS.length}</span><h3>${s.title}</h3><p>${s.text}</p></div>`;dotEls.forEach((d,k)=>d.classList.toggle('on',k===cs));}
-  flyHint.style.opacity=p>.03?0:1;
-}
-new IntersectionObserver(es=>{flyOn=es[0].isIntersecting;},{rootMargin:'100px'}).observe(fly);
-(function flyLoop(now){if(flyOn&&document.body.classList.contains('entered'))drawFly(now);requestAnimationFrame(flyLoop);})(performance.now());
-addEventListener('resize',layoutRoute);
-
-
-// nav, work list, filters
-document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',e=>{const el=document.getElementById(a.dataset.go);if(el){e.preventDefault();el.scrollIntoView({behavior:RM?'auto':'smooth'});}}));
-document.querySelectorAll('.row').forEach(b=>b.addEventListener('click',()=>{const li=b.closest('.proj'),open=!li.classList.contains('open');li.classList.toggle('open',open);b.setAttribute('aria-expanded',open);}));
-// keywords: every project is tagged; clicking a keyword shows the matching projects
-const KW=[['visual','Visual design'],['space','Space design'],['retail','Retail design'],['fixture','Fixture design'],['product','Product design'],['experience','Experience design'],['brand','Brand strategy'],['content','Content strategy'],['deck','Presentation design']];
-const KWL=Object.fromEntries(KW);
-const projs=[...document.querySelectorAll('.proj')],empty=document.getElementById('empty');
-projs.forEach(p=>{p.querySelector('.meta').textContent=p.dataset.tags.split(' ').map(k=>KWL[k]).join(', ');});
-const count=k=>projs.filter(p=>p.dataset.tags.split(' ').includes(k)).length;
-const chip=(k,label,n)=>`<button type="button" data-f="${k}">${label}${n!=null?`<sup>${n}</sup>`:''}</button>`;
-
-const kwWork=document.getElementById('kwWork');kwWork.innerHTML=chip('all','All')+KW.map(([k,l])=>chip(k,l,count(k))).join('');
-function setFilter(f,flash){
-  kwWork.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.f===f));
-  let n=0;projs.forEach(p=>{const show=f==='all'||p.dataset.tags.split(' ').includes(f);p.hidden=!show;p.classList.remove('pulse');if(show){n++;if(flash){void p.offsetWidth;p.classList.add('pulse');}}});
-  empty.hidden=n>0;
-}
-kwWork.addEventListener('click',e=>{const b=e.target.closest('button');if(b)setFilter(b.dataset.f,false);});
-setFilter('all');
-['maps','journey','work','contact'].forEach(id=>{const el=document.getElementById(id);if(el)el.tabIndex=-1;});
-
 buildSprites();resize();requestAnimationFrame(frame);
 // deep links skip the intro
-if(location.hash==='#about')location.replace('about.html');
-if(location.hash==='#resume'||location.hash==='#top'){if(location.hash==='#resume')history.replaceState(null,'','#contact');else history.replaceState(null,'',location.pathname);}
-if(['#maps','#loadout','#journey','#work','#contact'].includes(location.hash)){loaded=true;progress=1;street.classList.add('loaded');document.body.classList.add('entered');running=false;
-  requestAnimationFrame(()=>{layoutRoute();document.getElementById(location.hash.slice(1)).scrollIntoView();});}
+const OLD={"#about":"","#maps":"","#loadout":"#loadout","#work":"#projects","#projects":"#projects","#journey":"#journey","#contact":"#contact","#resume":"#contact"};
+if(location.hash in OLD)location.replace("about.html"+OLD[location.hash]);
 })();
 </script>
+<script>(()=>{/* dock: a glass pill follows hover and settles on the current item */
+document.querySelectorAll('nav.dock').forEach(d=>{
+  const ind=document.createElement('span');ind.className='dock-ind';ind.setAttribute('aria-hidden','true');d.prepend(ind);
+  const cur=()=>d.querySelector('a.on:not(.cta)')||d.querySelector('a[aria-current="page"]');
+  const move=a=>{d.querySelectorAll("a").forEach(x=>x.classList.toggle("at",x===a));if(!a){ind.style.opacity=0;return;}ind.style.opacity=1;ind.style.width=a.offsetWidth+'px';ind.style.transform=`translate(${a.offsetLeft}px,-50%)`;};
+  ind.style.transition='none';move(cur());void ind.offsetWidth;ind.style.transition='';
+  d.addEventListener('pointerover',e=>{const a=e.target.closest('a');if(a&&!a.classList.contains('cta'))move(a);});
+  d.addEventListener('pointerleave',()=>move(cur()));
+  d.addEventListener('focusin',e=>{const a=e.target.closest('a');if(a&&!a.classList.contains('cta'))move(a);});
+  d.addEventListener('focusout',()=>move(cur()));
+  addEventListener('resize',()=>move(cur()));
+  d.dockMove=()=>move(cur());
+});
+})();</script>
+
 </body>
 </html>

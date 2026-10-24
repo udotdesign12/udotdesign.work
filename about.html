@@ -4,7 +4,7 @@
   --bg:#f4f4f1;--ink:#121212;--ink-2:#4a4a47;--band:#fff8ec;--card:#d9d9d9;--hl:#ffcb05;--coral:#fb4616;
   --glass-a:rgba(255,255,255,.40);--glass-b:rgba(255,255,255,.18);--glass-edge:rgba(255,255,255,.75);
   --ease-out:cubic-bezier(.23,1,.32,1);--ease-in-out:cubic-bezier(.77,0,.175,1);
-  --f-inter:"Inter",system-ui,sans-serif;--f-hn:"Helvetica Neue",Helvetica,Arial,sans-serif;--f-geist:"Geist","Inter",system-ui,sans-serif;
+  --f-hn:"Helvetica Neue",Helvetica,Arial,sans-serif;--f-inter:var(--f-hn);--f-geist:var(--f-hn);
   color-scheme:light;
 }
 :root[data-theme="dark"]{
@@ -18,7 +18,7 @@ body{font-family:var(--f-hn);-webkit-font-smoothing:antialiased;overflow-x:hidde
 
 /* fixed 1440 canvas, scaled to the viewport so layout + ratio match Figma exactly */
 .wrap{position:relative;width:100%;overflow:hidden}
-.stage{position:absolute;left:0;top:0;width:1440px;height:5334px;transform-origin:0 0;background:var(--bg);transition:background-color .4s ease}
+.stage{position:absolute;left:0;top:0;width:1440px;height:6234px;transform-origin:0 0;background:var(--bg);transition:background-color .4s ease}
 .stage>*{position:absolute}
 .stage svg{overflow:visible}
 
@@ -234,6 +234,59 @@ body.paused *,body.paused *::after{animation-play-state:paused!important}
   .m-route b{display:block;font:700 19px/1.2 var(--f-inter)}
   .m-route span{display:block;font-size:15px;color:var(--ink-2);margin-top:2px}
 }
+
+/* dock: glass pill slides to the current / hovered item; Resume is glass with a yellow tint */
+nav.dock{isolation:isolate}
+nav.dock a{position:relative;z-index:1;background:transparent!important;transition:color .3s ease}
+nav.dock a:not(.cta){color:#121212!important}nav.dock a.at:not(.cta){color:#f4f4f1!important}
+nav.dock a.cta{color:#121212!important;background:linear-gradient(160deg,rgba(255,226,110,.78),rgba(255,203,5,.5))!important;
+  box-shadow:inset 0 1.5px 1px rgba(255,255,255,.9),inset 0 -1px 2px rgba(200,150,0,.35),0 0 0 1px rgba(255,255,255,.6),0 8px 18px -8px rgba(200,150,0,.45);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:transform .2s cubic-bezier(.22,1,.36,1),box-shadow .2s}
+nav.dock a.cta:active{transform:scale(.96)}
+.dock-ind{position:absolute;z-index:0;left:0;top:50%;height:calc(100% - 10px);width:0;border-radius:999px;pointer-events:none;opacity:0;
+  transform:translate(0,-50%);
+  background:linear-gradient(160deg,rgba(58,58,56,.72) 0%,rgba(12,12,12,.66) 55%,rgba(24,28,46,.72) 100%);
+  -webkit-backdrop-filter:blur(14px) saturate(170%) brightness(.85);backdrop-filter:blur(14px) saturate(170%) brightness(.85);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.35),inset 0 -1px 2px rgba(255,255,255,.08),0 0 0 1px rgba(255,255,255,.18),0 10px 22px -8px rgba(0,0,0,.45);
+  transition:transform .5s cubic-bezier(.22,1,.36,1),width .5s cubic-bezier(.22,1,.36,1),opacity .25s ease}
+.dock-ind::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;pointer-events:none;background:linear-gradient(150deg,rgba(255,255,255,.75),rgba(255,255,255,.08) 40%,rgba(160,185,255,.35) 75%,rgba(255,255,255,.55));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.dock-ind::after{content:"";position:absolute;left:12%;right:12%;top:2px;height:40%;border-radius:999px;background:linear-gradient(rgba(255,255,255,.28),rgba(255,255,255,0));pointer-events:none}
+nav.dock a{transition:color .35s cubic-bezier(.22,1,.36,1)!important}
+.night .dock-ind,:root[data-theme="dark"] .dock-ind{background:linear-gradient(160deg,rgba(255,255,255,.3),rgba(180,200,255,.12));
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.5),0 0 0 1px rgba(255,255,255,.25),0 8px 18px -8px rgba(0,0,0,.6)}
+.night nav.dock a:not(.cta),:root[data-theme="dark"] nav.dock a:not(.cta){color:#f4f4f1!important}
+@media (max-width:1040px){nav.dock a{padding-left:12px!important;padding-right:12px!important}nav.dock a[data-nav="top"],nav.dock a.cta{min-width:0!important}}
+@media (max-width:640px){nav.dock a{padding-left:7px!important;padding-right:7px!important;font-size:12px!important}nav.dock .me-ic,nav.dock .arr{display:none}}
+@media (prefers-reduced-motion:reduce){.dock-ind{transition:opacity .2s ease}}
+@media (prefers-reduced-transparency:reduce){.dock-ind{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}}
+
+/* let's connect: closes the page in the same notebook language (marker highlights, sticky notes, glass) */
+.anc{left:0;width:1px;height:1px;pointer-events:none}
+.lc-h{margin:0;white-space:nowrap;font:700 112px/1 var(--f-inter);letter-spacing:-.045em;color:var(--ink)}
+.lc-h mark,.lc-p mark{color:inherit;background:linear-gradient(transparent 55%,var(--hl) 55%,var(--hl) 90%,transparent 90%);padding:0 .05em}
+.lc-p mark.c{background:linear-gradient(transparent 55%,rgba(251,70,22,.45) 55%)}
+.lc-p{margin:0;font:400 26px/1.5 var(--f-inter);color:var(--ink-2)}
+.lc-btn{display:flex;align-items:center;justify-content:center;gap:12px;border-radius:50px;text-decoration:none;color:var(--ink);font:600 22px/1 var(--f-inter);transition:transform .2s var(--ease-out)}
+.lc-btn>*{position:static}.lc-btn svg{width:14px;height:14px}
+.lc-btn:hover{transform:translateY(-3px)}.lc-btn:active{transform:scale(.97)}
+.lc-note{width:220px;height:150px;padding:22px 22px 0;background:#ffe680;color:#121212;text-decoration:none;font:700 30px/1.1 var(--f-inter);letter-spacing:-.02em;
+  transform:rotate(var(--r));box-shadow:0 14px 22px -12px rgba(18,18,18,.35);transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s}
+.lc-note small{display:block;font:500 16px/1 var(--f-inter);letter-spacing:0;color:#4a4a47;margin-bottom:10px}
+.lc-note:hover{transform:rotate(0) translateY(-6px) scale(1.03);box-shadow:0 24px 30px -14px rgba(18,18,18,.4)}
+.lc-note:focus-visible{outline:2px solid var(--coral);outline-offset:4px}
+.lc-foot{margin:0;padding-top:28px;border-top:1px solid rgba(18,18,18,.14);font:500 16px/1.4 var(--f-inter);color:var(--ink-2)}
+@media (max-width:767px){
+  .m-contact .lc-btn{position:relative;display:inline-flex;height:56px;padding:0 26px;font-size:18px;margin:6px 0 22px}
+  .m-contact .lc-notes{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .m-contact .lc-note{position:relative;display:block;width:auto;height:116px;padding:16px;font-size:22px}
+  .m-contact .lc-note small{font-size:13px;margin-bottom:8px}
+}
+
+/* type: only Helvetica Neue Bold, plus Figma Hand Bold for the handwritten bits */
+@font-face{font-family:"HN Bold";src:local("Helvetica Neue Bold"),local("HelveticaNeue-Bold");font-weight:700}
+@font-face{font-family:"Figma Hand";src:local("Figma Hand Bold"),local("FigmaHand-Bold"),local("Figma Hand");font-weight:700}
+body,body *{font-family:"HN Bold","Helvetica Neue",Helvetica,Arial,sans-serif!important;font-weight:700!important}
+.street .hero-copy .big mark,.m h1 em,.lc-note small{font-family:"Figma Hand","Caveat",cursive!important}
 </style>
 <link rel="icon" type="image/png" href="images/about-page/logo.png">
 <meta name="description" content="Utkarsh, a multidisciplinary designer at NID Bangalore: retail spaces, fixtures, products, brands and the stories around them.">
@@ -511,6 +564,15 @@ body.paused *,body.paused *::after{animation-play-state:paused!important}
 <div class="stop" style="left:420px;top:4827px;width:240px;text-align:right" data-x="420" data-y="4827" data-al="right"><b>UPID, Noida</b><span>B.Des in Product Design</span></div>
 <div class="stop" style="left:812px;top:4729px;width:240px;text-align:left" data-x="812" data-y="4729" data-al="left"><b>UPID, Noida</b><span>B.Des in Product Design</span></div>
 <div class="stop" style="left:1175px;top:4782px;width:240px;text-align:left" data-x="1175" data-y="4782" data-al="left"><b>UPID, Noida</b><span>B.Des in Product Design</span></div>
+<div class="anc" id="about" style="top:0"></div><div class="anc" id="loadout" style="top:1095px"></div><div class="anc" id="projects" style="top:1940px"></div><div class="anc" id="journey" style="top:3887px"></div><div class="anc" id="contact" style="top:5334px"></div>
+<h2 class="lc-h" style="left:80px;top:5450px;width:780px">Let’s <mark>connect.</mark></h2>
+<p class="lc-p" style="left:80px;top:5640px;width:620px">I take on retail and space design, brand and content work, and collaborations with studios and teams. I’m also open to my <mark class="c">NID Graduation Project.</mark></p>
+<a class="glass lc-btn" href="mailto:you@example.com" style="left:80px;top:5850px;width:270px;height:68px">Write to me <svg viewBox="0 0 13 13" aria-hidden="true"><path d="M12 12V1H1M1 12 12 1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="lc-note" href="#" style="left:880px;top:5470px;--r:-5deg"><small>find me on</small>LinkedIn</a>
+<a class="lc-note" href="#" style="left:1130px;top:5520px;--r:4deg"><small>see my</small>Behance</a>
+<a class="lc-note" href="#" style="left:900px;top:5730px;--r:3deg"><small>follow along</small>Instagram</a>
+<a class="lc-note" href="#" style="left:1150px;top:5770px;--r:-3deg"><small>download my</small>Résumé</a>
+<p class="lc-foot" style="left:80px;top:6110px;width:1280px">u.design by Utkarsh, 2026 · Clients include Suto Katha, Anucriti, Yash Exports and Sattva Mind Clinic</p>
 </div></main>
 <div class="m">
   <div class="m-top"><a class="glass badge" href="index.html" aria-label="u.design home"><span class="badge-t">PORTFOLIO BY</span><img src="images/about-page/logo.png" alt=""></a><button class="glass" type="button" onclick="document.getElementById('themeBtn').click()">Day / Night</button></div>
@@ -522,17 +584,17 @@ body.paused *,body.paused *::after{animation-play-state:paused!important}
     <div class="glass m-fact"><b>On the side</b><p><mark class="b">U.design</mark>, my freelance brand and content strategy, Brand Identity, and <mark class="b">Clothique</mark>, a t-shirt graphics label.</p></div>
     <div class="glass m-fact"><b>Before that</b><p><mark class="b">B.Des in Product Design</mark> at UPID Noida, then a year at INRADA O.G.R.S Chennai.</p></div>
   </div>
-  <section class="m-sec m-band" style="margin-top:44px">
+  <section class="m-sec m-band" id="m-loadout" style="margin-top:44px">
     <h2>My <mark>Loadout.</mark></h2>
     <div class="m-mon"><img src="images/about-page/monitor.png" alt=""><div class="m-apps"><img src="images/about-page/fusion360.png" alt="Fusion 360"><img src="images/about-page/sketchup.png" alt="SketchUp"><img src="images/about-page/unity.png" alt="Unity"><img src="images/about-page/figma.png" alt="Figma"><img src="images/about-page/creative-cloud.png" alt="Creative Cloud"><img src="images/about-page/procreate.png" alt="Procreate"><img src="images/about-page/autocad.png" alt="AutoCAD"><img src="images/about-page/illustrator.png" alt="Illustrator"><img src="images/about-page/claude.png" alt="Claude"><img src="images/about-page/photoshop.png" alt="Photoshop"><img src="images/about-page/chatgpt.png" alt="ChatGPT"><img src="images/about-page/after-effects.png" alt="After Effects"><img src="images/about-page/premiere-pro.png" alt="Premiere Pro"><img src="images/about-page/keyshot.png" alt="KeyShot"><img src="images/about-page/vray.png" alt="V-Ray"></div></div>
     <p>Every project starts with <mark>asking questions</mark>, then <mark>research, testing and iteration.</mark> I sketch in Procreate, design in Figma and Adobe Creative Cloud, build spaces and products in SketchUp, Fusion 360 and AutoCAD, and create immersive experiences in Unity. Claude and ChatGPT help me turn ideas into reality fast.</p>
     <div class="m-pills"><span class="glass">Visual design</span><span class="glass">Space design</span><span class="glass">Retail design</span><span class="glass">Fixture design</span><span class="glass">Design Systems</span><span class="glass">Product design</span><span class="glass">Brand strategy</span><span class="glass">Content strategy</span><span class="glass">Experience design</span></div>
   </section>
-  <section class="m-sec">
+  <section class="m-sec" id="m-projects">
     <h2>Selected <mark>Work.</mark></h2>
     <div class="m-cards"><a href="index.html#work">Project 1</a><a href="index.html#work">Project 2</a><a href="index.html#work">Project 3</a><a href="index.html#work">Project 4</a><a href="index.html#work">Project 5</a><a href="index.html#work">Project 6</a></div>
   </section>
-  <section class="m-sec m-band">
+  <section class="m-sec m-band" id="m-journey">
     <h2>The journey <mark>so far...</mark></h2>
     <ol class="m-route">
       <li><b>A small town</b><span>Where noticing started</span></li>
@@ -542,8 +604,14 @@ body.paused *,body.paused *::after{animation-play-state:paused!important}
       <li><b>What’s next?</b><span>Graduation Project. Maybe the next stop is yours.</span></li>
     </ol>
   </section>
+  <section class="m-sec m-contact" id="m-contact">
+    <h2>Let’s <mark>connect.</mark></h2>
+    <p>I take on retail and space design, brand and content work, and collaborations with studios and teams. I’m also open to my <mark class="c">NID Graduation Project.</mark></p>
+    <a class="glass lc-btn" href="mailto:you@example.com">Write to me <svg viewBox="0 0 13 13" aria-hidden="true"><path d="M12 12V1H1M1 12 12 1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <div class="lc-notes"><a class="lc-note" href="#" style="--r:-3deg"><small>find me on</small>LinkedIn</a><a class="lc-note" href="#" style="--r:3deg"><small>see my</small>Behance</a><a class="lc-note" href="#" style="--r:2deg"><small>follow along</small>Instagram</a><a class="lc-note" href="#" style="--r:-2deg"><small>download my</small>Résumé</a></div>
+  </section>
 </div>
-<nav class="dock" aria-label="Sections"><a href="index.html" data-nav="top"><svg class="me-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ffcb05"/><circle cx="12" cy="8.6" r="3.2" fill="#121212"/><path d="M6.2 19.2c.6-3.6 2.9-5.6 5.8-5.6s5.2 2 5.8 5.6" fill="#121212"/></svg>Home</a><a href="index.html#journey" data-nav="journey">Journey</a><a href="index.html#work" data-nav="work">Work</a><a href="about.html" data-nav="about" aria-current="page">About</a><a href="index.html#contact" data-nav="contact">Contact</a><a href="index.html#resume" data-nav="resume" class="cta">Resume<svg class="arr" viewBox="0 0 13 13" aria-hidden="true"><path d="M12 12V1H1M1 12 12 1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></nav>
+<nav class="dock" aria-label="Sections"><a href="index.html" data-nav="top"><svg class="me-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ffcb05"/><circle cx="12" cy="8.6" r="3.2" fill="#121212"/><path d="M6.2 19.2c.6-3.6 2.9-5.6 5.8-5.6s5.2 2 5.8 5.6" fill="#121212"/></svg>Home</a><a href="#about" data-nav="about" aria-current="page">About</a><a href="#projects" data-nav="projects">Projects</a><a href="#journey" data-nav="journey">Journey</a><a href="#contact" data-nav="contact">Contact</a><a href="#contact" data-nav="resume" class="cta">Resume<svg class="arr" viewBox="0 0 13 13" aria-hidden="true"><path d="M12 12V1H1M1 12 12 1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></nav>
 <div aria-hidden="true" style="height:104px"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
 <script>(() => {
@@ -554,7 +622,7 @@ body.paused *,body.paused *::after{animation-play-state:paused!important}
   let paused = false;
 
   /* ---------- fixed 1440 stage scaled to the viewport ---------- */
-  const W = 1440, H = 5334;
+  const W = 1440, H = 6234;
   const stage = $('#stage'), wrap = $('#wrap');
   let scale = 1;
   const fit = () => {
@@ -774,4 +842,31 @@ body.paused *,body.paused *::after{animation-play-state:paused!important}
   });
   addEventListener('scroll', drawRoads, { passive: true }); addEventListener('resize', drawRoads); drawRoads();
 })();
-</script></body></html>
+</script><script>(()=>{/* dock: a glass pill follows hover and settles on the current item */
+document.querySelectorAll('nav.dock').forEach(d=>{
+  const ind=document.createElement('span');ind.className='dock-ind';ind.setAttribute('aria-hidden','true');d.prepend(ind);
+  const cur=()=>d.querySelector('a.on:not(.cta)')||d.querySelector('a[aria-current="page"]');
+  const move=a=>{d.querySelectorAll("a").forEach(x=>x.classList.toggle("at",x===a));if(!a){ind.style.opacity=0;return;}ind.style.opacity=1;ind.style.width=a.offsetWidth+'px';ind.style.transform=`translate(${a.offsetLeft}px,-50%)`;};
+  ind.style.transition='none';move(cur());void ind.offsetWidth;ind.style.transition='';
+  d.addEventListener('pointerover',e=>{const a=e.target.closest('a');if(a&&!a.classList.contains('cta'))move(a);});
+  d.addEventListener('pointerleave',()=>move(cur()));
+  d.addEventListener('focusin',e=>{const a=e.target.closest('a');if(a&&!a.classList.contains('cta'))move(a);});
+  d.addEventListener('focusout',()=>move(cur()));
+  addEventListener('resize',()=>move(cur()));
+  d.dockMove=()=>move(cur());
+});
+})();</script>
+
+<script>(()=>{/* dock links scroll to sections on this page and the active pill follows the scroll */
+const ids=['about','projects','journey','contact'],RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const el=id=>document.getElementById((innerWidth<768?'m-':'')+id)||document.getElementById(id);
+const d=document.querySelector('nav.dock'),links=[...d.querySelectorAll('a[href^="#"]')];
+const setOn=id=>{links.forEach(a=>a.classList.toggle('on',a.dataset.nav===id));d.dockMove&&d.dockMove();};
+links.forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href').slice(1),t=el(id);if(!t)return;e.preventDefault();history.replaceState(null,'','#'+id);
+  if(id==='about')scrollTo({top:0,behavior:RM?'auto':'smooth'});else t.scrollIntoView({behavior:RM?'auto':'smooth'});}));
+let tick=0;const spy=()=>{tick=0;let on='about';ids.forEach(id=>{const t=el(id);if(t&&t.getBoundingClientRect().top<innerHeight*.45)on=id;});
+  if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)on='contact';setOn(on);};
+addEventListener('scroll',()=>{if(!tick){tick=1;requestAnimationFrame(spy);}},{passive:true});
+addEventListener('load',()=>{const h=location.hash.slice(1);if(ids.includes(h)&&h!=='about'){const t=el(h);if(t)t.scrollIntoView();}spy();});
+})();</script>
+</body></html>
