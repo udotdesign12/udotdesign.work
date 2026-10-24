@@ -453,42 +453,6 @@ footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border
   .bubble{font-size:13.5px}
 }
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition-duration:.01ms!important}}
-
-/* ---------- editorial refresh: light sections, Inter headlines with marker highlights (matches about.html) ---------- */
-#site{--head:'Inter','Helvetica Neue',Arial,sans-serif;--band:#fff8ec;--coral:#fb4616;
-  --night:var(--ground);--night-2:#fff;--night-line:rgba(18,18,18,.12);--night-ink:var(--ink);--night-ink-2:var(--ink-2)}
-#site main{counter-reset:sec}
-#site h2{font-family:var(--head);font-weight:700;letter-spacing:-.04em;line-height:.98}
-#site h2 mark{color:inherit;background:linear-gradient(transparent 58%,var(--yellow) 58%,var(--yellow) 92%,transparent 92%);padding:0 .06em}
-#site .sec-head h2,#site .work-head h2,#site .fly-head h2{font-size:clamp(44px,6.4vw,96px)}
-#site .sec-head h2::before,#site .work-head h2::before,#site .fly-head h2::before{counter-increment:sec;content:counter(sec,decimal-leading-zero) " /";display:block;
-  font:700 13px/1 'Inter',sans-serif;letter-spacing:.16em;color:var(--coral);margin-bottom:18px}
-#site .maps,#site .loadout,#site .work,#site .contact{padding-block:clamp(88px,11vw,160px)}
-#site .loadout{background:var(--band)}
-#site .night .glass,#site .night .glass::after{background:#fff;border-color:var(--night-line);box-shadow:0 1px 0 rgba(18,18,18,.04)}
-#site .map{background:#fff;border-radius:22px;box-shadow:0 1px 0 rgba(18,18,18,.04)}
-#site .map svg{background:#faf9f5}
-#site .map:hover{border-color:rgba(18,18,18,.35);box-shadow:0 18px 40px -22px rgba(18,18,18,.35)}
-#site .map[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink),0 18px 40px -22px rgba(18,18,18,.4)}
-#site .map[aria-pressed="true"] .code,#site .map-detail .terrain{color:var(--coral)}
-#site .map .nm{font-size:16px;font-weight:700}
-#site .map-detail{background:#fff;border-radius:22px}
-#site .map-detail li::before{background:var(--coral);box-shadow:none}
-#site .slot{background:#fff;border-radius:22px}
-#site .slot:hover{background:#fff;box-shadow:0 18px 40px -22px rgba(18,18,18,.35)}
-#site .slot .mono{background:var(--ground)}
-#site .slot.more{background:transparent;border-color:rgba(18,18,18,.25)}
-#site .row .t{font-weight:700;letter-spacing:-.03em;font-size:clamp(26px,3vw,42px);
-  background:linear-gradient(var(--yellow),var(--yellow)) 0 88%/0 38% no-repeat;transition:background-size .45s var(--ease)}
-#site .proj:hover .row .t,#site .row[aria-expanded="true"] .t{background-size:100% 38%}
-#site .row .yr{color:var(--coral);font-weight:700;font-variant-numeric:tabular-nums}
-#site .contact{background:var(--ink);color:var(--ground)}
-#site .contact h2{font-size:clamp(44px,7vw,112px);max-width:12ch}
-#site .contact h2 mark{color:var(--ink);background:var(--yellow);padding:0 .12em;border-radius:.12em}
-#site .contact p,#site .contact footer{color:rgba(244,244,241,.7)}
-#site .contact .btn{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
-#site .contact .links a{color:var(--ground)}
-@media (prefers-reduced-motion:reduce){#site .row .t{transition:none}}
 </style>
 </head>
 <body>
@@ -518,7 +482,7 @@ footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border
   <main>
     <section class="night maps" id="maps" aria-labelledby="maps-h">
       <div class="wrap">
-        <div class="sec-head"><h2 id="maps-h">Choose a <mark>map.</mark></h2><p>Five kinds of ground I design on. Pick one to see where I’ve played it.</p></div>
+        <div class="sec-head"><h2 id="maps-h">Choose a map</h2><p>Five kinds of ground I design on. Pick one to see where I’ve played it.</p></div>
         <div class="map-grid" id="mapGrid" role="group" aria-label="Design disciplines"></div>
         <div class="map-detail" id="mapDetail" aria-live="polite"></div>
       </div>
@@ -526,7 +490,7 @@ footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border
 
     <section class="night loadout" id="loadout" aria-labelledby="load-h">
       <div class="wrap">
-        <div class="sec-head"><h2 id="load-h">My <mark>Loadout.</mark></h2><p>The tools I carry into every project.</p></div>
+        <div class="sec-head"><h2 id="load-h">Loadout</h2><p>The tools I carry into every project.</p></div>
         <div class="slots" id="slots"></div>
       </div>
     </section>
@@ -534,7 +498,7 @@ footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border
     <section class="fly" id="journey" aria-labelledby="jr-h">
       <div class="fly-stage">
         <canvas id="flyCanvas" aria-hidden="true"></canvas>
-        <div class="fly-head"><h2 id="jr-h">The route <mark>so far.</mark></h2><p>Scroll to walk it with me.</p></div>
+        <div class="fly-head"><h2 id="jr-h">The route so far</h2><p>Scroll to walk it with me.</p></div>
         <div class="fly-tags" id="flyTags"></div>
         <div class="glass fly-card" id="flyCard" aria-live="polite"></div>
         <div class="fly-dots" id="flyDots" role="group" aria-label="Jump to a stop"></div>
@@ -544,7 +508,7 @@ footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border
 <section class="work" id="work" aria-labelledby="work-h">
     <div class="wrap">
       <div class="work-head">
-        <h2 id="work-h">Selected <mark>work.</mark></h2>
+        <h2 id="work-h">Selected work</h2>
         <div class="filters" id="kwWork" role="group" aria-label="Filter projects by discipline"></div>
       </div>
       <ul class="list" id="list">
@@ -650,7 +614,7 @@ footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border
   </section>
 <section class="contact" id="contact" aria-labelledby="contact-h">
     <div class="wrap">
-      <h2 id="contact-h">Let’s make something people <mark>stop</mark> for.</h2>
+      <h2 id="contact-h">Let’s make something people stop for.</h2>
       <p>I take on retail and space design, brand and content work, and collaborations with studios and teams. I’m also open to my NID Graduation Project.</p>
       <a class="btn" href="mailto:you@example.com">Write to me</a>
       <div class="links">
@@ -1048,14 +1012,14 @@ const MAPS=[
 ];
 function terrain(sd){
   seed(sd*7919+3);let o='<svg viewBox="0 0 200 130" aria-hidden="true">';
-  for(let x=20;x<200;x+=20)o+=`<line x1="${x}" y1="0" x2="${x}" y2="130" stroke="rgba(18,18,18,.05)"/>`;
-  for(let y=20;y<130;y+=20)o+=`<line x1="0" y1="${y}" x2="200" y2="${y}" stroke="rgba(18,18,18,.05)"/>`;
+  for(let x=20;x<200;x+=20)o+=`<line x1="${x}" y1="0" x2="${x}" y2="130" stroke="rgba(244,244,241,.05)"/>`;
+  for(let y=20;y<130;y+=20)o+=`<line x1="0" y1="${y}" x2="200" y2="${y}" stroke="rgba(244,244,241,.05)"/>`;
   const hills=[];for(let h=0;h<3;h++)hills.push({x:30+R()*140,y:25+R()*80,r:26+R()*26,a:R()*6,b:R()*6});
   for(const h of hills)for(let k=6;k>=1;k--){let d='';const rr=h.r*k/6;
     for(let i=0;i<=36;i++){const a=i/36*TAU,m=1+.2*Math.sin(a*2+h.a)+.1*Math.sin(a*3+h.b+k*.3);d+=(i?'L':'M')+(h.x+Math.cos(a)*rr*m).toFixed(1)+' '+(h.y+Math.sin(a)*rr*m*.75).toFixed(1);}
-    o+=`<path d="${d}Z" fill="none" stroke="rgba(18,18,18,${(.08+k*.03).toFixed(2)})" stroke-width="1"/>`;}
+    o+=`<path d="${d}Z" fill="none" stroke="rgba(244,244,241,${(.1+k*.035).toFixed(2)})" stroke-width="1"/>`;}
   const a=hills[0],b=hills[1];
-  o+=`<path d="M8 ${120} Q ${b.x} ${b.y+30} ${a.x} ${a.y}" fill="none" stroke="#fb4616" stroke-width="1.4" stroke-dasharray="3 4"/>`;
+  o+=`<path d="M8 ${120} Q ${b.x} ${b.y+30} ${a.x} ${a.y}" fill="none" stroke="rgba(255,203,5,.55)" stroke-width="1.4" stroke-dasharray="3 4"/>`;
   o+=`<circle cx="${a.x}" cy="${a.y}" r="7" fill="rgba(255,203,5,.2)"/><circle cx="${a.x}" cy="${a.y}" r="3.2" fill="#ffcb05"/></svg>`;
   return o;
 }
