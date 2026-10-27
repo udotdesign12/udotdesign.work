@@ -503,6 +503,17 @@ body,body *{font-family:"UHN","Helvetica Neue",Helvetica,Arial,sans-serif!import
 
 /* home type sizes from Figma (Home street, desktop + mobile) */
 @media (max-width:640px){.street .hero-copy .hey{font-size:15px;font-weight:600}.street .hero-copy .big{font-size:30px;font-weight:700;line-height:1.06;letter-spacing:-.04em}.street .hero-copy .sub{font-size:15px;font-weight:500;line-height:1.4}}
+
+:root{--fs-display:4.236rem;--fs-h1:3.33rem;--fs-h2:2.618rem;--fs-h3:2.058rem;--fs-title:1.618rem;--fs-lead:1.272rem;--fs-body:1rem;--fs-small:.786rem;--fs-label:.618rem;--lh-body:1.618}
+/* golden-ratio type scale (TYPOGRAPHY.md); the dock and glass are locked and untouched */
+.street .hero-copy .hey{font-size:16px!important}
+.street .hero-copy .big{font-size:clamp(33px,3.75vw,54px)!important;line-height:1.05!important;letter-spacing:-.04em!important}
+.street .hero-copy .sub{font-size:20px!important;line-height:1.5!important}
+@media (max-width:640px){
+  .street .hero-copy .hey{font-size:15px!important}
+  .street .hero-copy .big{font-size:33px!important;line-height:1.06!important}
+  .street .hero-copy .sub{font-size:15px!important;line-height:var(--lh-body)!important}
+}
 </style>
 </head>
 <body>
