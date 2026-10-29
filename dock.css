@@ -98,4 +98,4 @@ nav.dock a{transition:color .35s cubic-bezier(.22,1,.36,1)!important}
 @media (max-width:640px){nav.dock a{padding-left:7px!important;padding-right:7px!important;font-size:12.5px!important}nav.dock .me-ic,nav.dock .arr{display:none}}
 @media (prefers-reduced-motion:reduce){.dock-ind{transition:opacity .2s ease}}
 @media (prefers-reduced-transparency:reduce){.dock-ind{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}}
-.me-ph{display:inline-block;flex:none;border-radius:50%;background:url(../images/me.webp) 52.2% 57.1%/250% auto no-repeat}
+.me-ph{display:inline-block;flex:none;border-radius:50%;background:url(images/me.webp) 52.2% 57.1%/250% auto no-repeat}

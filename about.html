@@ -6,8 +6,8 @@
 <title>Utkarsh | u.design</title>
 <meta name="description" content="Utkarsh Dwivedi, designer at NID Bangalore: retail spaces, fixtures, products, brands and the stories around them.">
 <link rel="icon" type="image/png" href="images/about-page/logo.png">
-<link rel="stylesheet" href="v2/dock.css">
-<link rel="stylesheet" href="v2/shutter.css">
+<link rel="stylesheet" href="dock.css">
+<link rel="stylesheet" href="shutter.css">
 <link rel="preload" as="image" href="images/about-page/logo.png">
 <script>try{if(sessionStorage.getItem('udShutter')){sessionStorage.removeItem('udShutter');document.documentElement.classList.add('arrive')}}catch(_){}</script>
 <style>
@@ -33,10 +33,10 @@ a{color:inherit}
 /* backgrounds from the Figma: FigJam-style dot grid, with grid-paper bands torn in between,
    and one warm paper grain laid over everything for depth */
 .dots{top:0;bottom:0;background:var(--paper)}
-.dots::before{content:"";position:absolute;inset:0;background:url(v2/assets/paper-dots.jpg) 0 0/719px auto repeat;opacity:.45}
-.band .grid{position:absolute;inset:64px 0;background:#f3f0e9 url(v2/assets/paper-grid.jpg) 0 0/720px auto repeat}
+.dots::before{content:"";position:absolute;inset:0;background:url(assets/paper-dots.jpg) 0 0/719px auto repeat;opacity:.45}
+.band .grid{position:absolute;inset:64px 0;background:#f3f0e9 url(assets/paper-grid.jpg) 0 0/720px auto repeat}
 .band::before,.band::after{content:"";position:absolute;left:0;right:0;height:84px;z-index:1;
-  background:url(v2/assets/torn-top.png) 0 0/702px auto repeat-x,url(v2/assets/torn-top.png) 351px 4px/702px auto repeat-x;
+  background:url(assets/torn-top.png) 0 0/702px auto repeat-x,url(assets/torn-top.png) 351px 4px/702px auto repeat-x;
   filter:drop-shadow(0 -3px 2px rgba(60,45,25,.10)) drop-shadow(0 -10px 14px rgba(60,45,25,.10))}
 .band::before{top:0}
 .band::after{bottom:0;transform:scaleY(-1)}
@@ -282,9 +282,9 @@ section,.sec{position:absolute;left:0;width:1440px;z-index:2}
   .bg.dots{position:fixed;inset:0;z-index:-2}
   .bg.grain{position:fixed;inset:0;z-index:-1}
   .bg.band{display:none}
-  .s-band,.s-journey,.foot{background:#f3f0e9 url(v2/assets/paper-grid.jpg) 0 0/360px auto repeat}
+  .s-band,.s-journey,.foot{background:#f3f0e9 url(assets/paper-grid.jpg) 0 0/360px auto repeat}
   .s-band::before,.s-band::after,.s-journey::before,.s-journey::after,.foot::before{content:"";position:absolute;left:0;right:0;height:56px;z-index:1;pointer-events:none;
-    background:url(v2/assets/torn-top.png) 0 0/468px auto repeat-x,url(v2/assets/torn-top.png) 234px 3px/468px auto repeat-x;
+    background:url(assets/torn-top.png) 0 0/468px auto repeat-x,url(assets/torn-top.png) 234px 3px/468px auto repeat-x;
     filter:drop-shadow(0 -3px 2px rgba(60,45,25,.10)) drop-shadow(0 -8px 12px rgba(60,45,25,.10))}
   .s-band::before,.s-journey::before,.foot::before{top:-28px}
   .s-band::after,.s-journey::after{bottom:-28px;transform:scaleY(-1)}
@@ -340,7 +340,7 @@ section,.sec{position:absolute;left:0;width:1440px;z-index:2}
 </style>
 </head>
 <body>
-<script src="v2/shutter.js" data-logo="images/about-page/logo.png"></script>
+<script src="shutter.js" data-logo="images/about-page/logo.png"></script>
 <div id="wrap">
 <div class="stage" id="stage">
   <div class="bg dots"></div>
@@ -355,44 +355,44 @@ section,.sec{position:absolute;left:0;width:1440px;z-index:2}
   <section class="s-hero" id="top" aria-label="About">
     <div class="a ctrls hi">
       <button class="ctl pause g lift" type="button" aria-pressed="false"><span class="bars" aria-hidden="true"><span class="bar"></span><span class="bar"></span></span><span class="play" aria-hidden="true"></span><span class="lb">Pause</span></button>
-      <button class="ctl day g lift" type="button" aria-pressed="false"><img class="ic" src="v2/assets/day.svg" alt=""><span class="lb">Day</span></button>
+      <button class="ctl day g lift" type="button" aria-pressed="false"><img class="ic" src="assets/day.svg" alt=""><span class="lb">Day</span></button>
     </div>
 
     <div class="pols">
       <div class="pol p1 pop" data-drag aria-label="Photo: loves mountains"><div class="flt">
         <div class="box" style="left:18px;top:18.58px;width:249.73px;height:261.13px"><div class="card" style="transform:rotate(-9.81deg)"></div></div>
-        <div class="box" style="left:34px;top:36.58px;width:212.98px;height:198.47px"><div class="ph" style="width:186.32px;height:168.37px;transform:rotate(-10.11deg)"><img src="v2/assets/photo-mountains.jpg" alt="Utkarsh in the mountains" style="width:100%;height:147.4%;top:-47.26%;left:0;object-fit:cover"></div></div>
-        <img class="cap" src="v2/assets/hand/cap-mountains.svg" alt="Loves mountains" style="left:155.95px;top:223.5px;width:133px;height:33px">
+        <div class="box" style="left:34px;top:36.58px;width:212.98px;height:198.47px"><div class="ph" style="width:186.32px;height:168.37px;transform:rotate(-10.11deg)"><img src="assets/photo-mountains.jpg" alt="Utkarsh in the mountains" style="width:100%;height:147.4%;top:-47.26%;left:0;object-fit:cover"></div></div>
+        <img class="cap" src="assets/hand/cap-mountains.svg" alt="Loves mountains" style="left:155.95px;top:223.5px;width:133px;height:33px">
         <div class="box" style="left:0;top:31.58px;width:76.92px;height:76.88px"><div class="tape" style="width:79.44px;transform:rotate(-44.97deg)"></div></div>
         <div class="box" style="left:160.44px;top:0;width:98.94px;height:76.41px"><div class="tape" style="width:98.14px;transform:rotate(31.62deg)"></div></div>
       </div></div>
       <div class="pol p2 pop" data-drag aria-label="Photo: fan of photography"><div class="flt">
         <div class="box" style="left:0;top:18.58px;width:249.73px;height:261.13px"><div class="card" style="transform:rotate(-170.19deg) scaleY(-1)"></div></div>
-        <div class="box" style="left:19.33px;top:35px;width:220.17px;height:191.42px"><div class="ph" style="width:195.7px;height:160.42px;transform:rotate(9.81deg)"><img src="v2/assets/photo-camera.jpg" alt="Utkarsh with a camera" style="width:122.95%;height:100%;left:-8.9%;top:0;object-fit:cover"></div></div>
-        <img class="cap" src="v2/assets/hand/cap-photo.svg" alt="Fan of photography" style="left:109.11px;top:205.5px;width:167px;height:48px">
+        <div class="box" style="left:19.33px;top:35px;width:220.17px;height:191.42px"><div class="ph" style="width:195.7px;height:160.42px;transform:rotate(9.81deg)"><img src="assets/photo-camera.jpg" alt="Utkarsh with a camera" style="width:122.95%;height:100%;left:-8.9%;top:0;object-fit:cover"></div></div>
+        <img class="cap" src="assets/hand/cap-photo.svg" alt="Fan of photography" style="left:109.11px;top:205.5px;width:167px;height:48px">
         <div class="box" style="left:190.81px;top:32px;width:76.92px;height:76.88px"><div class="tape" style="width:79.44px;transform:rotate(-135.03deg) scaleY(-1)"></div></div>
         <div class="box" style="left:8.34px;top:0;width:98.94px;height:76.41px"><div class="tape" style="width:98.14px;transform:rotate(148.38deg) scaleY(-1)"></div></div>
       </div></div>
       <div class="pol p3 pop" data-drag aria-label="Photo: always learning"><div class="flt">
         <div class="box" style="left:0;top:18.58px;width:249.73px;height:261.13px"><div class="card" style="transform:rotate(-170.19deg) scaleY(-1)"></div></div>
-        <div class="box" style="left:17.92px;top:32.62px;width:215.26px;height:199.4px"><div class="ph" style="width:187.61px;height:167.77px;transform:rotate(-169.41deg) scaleY(-1)"><img src="v2/assets/photo-learning.jpg" alt="Utkarsh at a craft workshop" style="width:123.52%;height:300.96%;left:-5.78%;top:-106.17%"></div></div>
-        <img class="cap" src="v2/assets/hand/cap-learning.svg" alt="Always learning" style="left:106.81px;top:214.5px;width:140px;height:43px">
+        <div class="box" style="left:17.92px;top:32.62px;width:215.26px;height:199.4px"><div class="ph" style="width:187.61px;height:167.77px;transform:rotate(-169.41deg) scaleY(-1)"><img src="assets/photo-learning.jpg" alt="Utkarsh at a craft workshop" style="width:123.52%;height:300.96%;left:-5.78%;top:-106.17%"></div></div>
+        <img class="cap" src="assets/hand/cap-learning.svg" alt="Always learning" style="left:106.81px;top:214.5px;width:140px;height:43px">
         <div class="box" style="left:190.81px;top:31.58px;width:76.92px;height:76.88px"><div class="tape" style="width:79.44px;transform:rotate(-135.03deg) scaleY(-1)"></div></div>
         <div class="box" style="left:8.34px;top:0;width:98.94px;height:76.41px"><div class="tape" style="width:98.14px;transform:rotate(148.38deg) scaleY(-1)"></div></div>
       </div></div>
     </div>
 
-    <div class="a orai hi" data-drag style="transition-delay:2.8s"><div class="hov"><div class="tag">Orai, UP</div><div class="arw"><img src="v2/assets/arrow-orai.svg" alt=""></div></div></div>
-    <h1 class="a name" style="margin:0"><img src="v2/assets/hand/im-utkarsh.svg" alt="I'm Utkarsh" width="412" height="197"></h1>
-    <div class="a pin hi" style="transition-delay:1.3s"><img src="v2/assets/avatar-s.png" alt=""></div>
-    <div class="a status hi" style="transition-delay:1s"><img src="v2/assets/dot.svg" alt=""><span>Available for Thoughtful Projects</span></div>
+    <div class="a orai hi" data-drag style="transition-delay:2.8s"><div class="hov"><div class="tag">Orai, UP</div><div class="arw"><img src="assets/arrow-orai.svg" alt=""></div></div></div>
+    <h1 class="a name" style="margin:0"><img src="assets/hand/im-utkarsh.svg" alt="I'm Utkarsh" width="412" height="197"></h1>
+    <div class="a pin hi" style="transition-delay:1.3s"><img src="assets/avatar-s.png" alt=""></div>
+    <div class="a status hi" style="transition-delay:1s"><img src="assets/dot.svg" alt=""><span>Available for Thoughtful Projects</span></div>
 
     <div class="a ibox">
       <div class="frame"></div><span class="h h1"></span><span class="h h2"></span><span class="h h3"></span><span class="h h4"></span>
-      <p id="intro">I grew up in a <mark>small town</mark>, watching how people <mark>move</mark> through markets and shops without really <mark>noticing</mark> them. Bachelor's in <mark>Product design</mark> taught me how things are built. A year at Industry taught me how they're used. Now, in my master’s, I design stores, fixtures and brands for one simple goal: <img class="hand" src="v2/assets/hand/intro-hand.svg" alt="to make people stop and notice">.</p>
+      <p id="intro">I grew up in a <mark>small town</mark>, watching how people <mark>move</mark> through markets and shops without really <mark>noticing</mark> them. Bachelor's in <mark>Product design</mark> taught me how things are built. A year at Industry taught me how they're used. Now, in my master’s, I design stores, fixtures and brands for one simple goal: <img class="hand" src="assets/hand/intro-hand.svg" alt="to make people stop and notice">.</p>
     </div>
 
-    <div class="a ud hi" data-drag style="transition-delay:3s"><div class="hov"><div class="cur"><img src="v2/assets/cursor.svg" alt=""></div><div class="tag">Udotdesign</div></div></div>
+    <div class="a ud hi" data-drag style="transition-delay:3s"><div class="hov"><div class="cur"><img src="assets/cursor.svg" alt=""></div><div class="tag">Udotdesign</div></div></div>
     <a class="a seework hi" href="#projects" data-jump style="transition-delay:3.3s">See my work ↗</a>
   </section>
 
@@ -400,21 +400,21 @@ section,.sec{position:absolute;left:0;width:1440px;z-index:2}
   <section class="s-band" id="skills" style="top:719px;height:1174px" aria-label="About">
     <div class="mq m-line" style="top:120px;--dur:46s" aria-label="Ideas are everywhere. Making people notice them is the design."><div class="trk"><div class="grp" aria-hidden="true"><span>Ideas are everywhere. Making people notice them is the design.</span></div></div></div>
     <div class="mq m-apps ltr" style="top:246px;--dur:34s" aria-label="Tools I use"><div class="trk"><div class="grp">
-      <div class="app g lift"><img src="v2/assets/a1.png" alt="AutoCAD"></div>
-      <div class="app g lift"><img src="v2/assets/a2.png" alt="Premiere Pro"></div>
-      <div class="app g lift"><img src="v2/assets/a3.png" alt="Unity"></div>
-      <div class="app g lift"><img src="v2/assets/a4.png" alt="V-Ray" style="width:48px"></div>
-      <div class="app g lift"><img class="full" src="v2/assets/a5.png" alt="Photoshop"></div>
-      <div class="app g lift"><img src="v2/assets/a6.png" alt="SketchUp"></div>
-      <div class="app g lift"><img src="v2/assets/a7.png" alt="Fusion 360" style="height:58px"></div>
-      <div class="app g lift"><img src="v2/assets/a8.png" alt="Creative Cloud" style="height:58px"></div>
-      <div class="app g lift"><img src="v2/assets/a9.png" alt="Figma"></div>
-      <div class="app g lift"><img class="slim" src="v2/assets/a10.png" alt="Procreate"></div>
-      <div class="app g lift"><img src="v2/assets/a11.png" alt="Claude"></div>
-      <div class="app g lift"><img src="v2/assets/a12.png" alt="Illustrator"></div>
-      <div class="app g lift"><img src="v2/assets/a13.png" alt="KeyShot" style="width:56px"></div>
-      <div class="app g lift"><img src="v2/assets/a14.png" alt="ChatGPT" style="height:55px"></div>
-      <div class="app g lift"><img src="v2/assets/a15.png" alt="After Effects"></div>
+      <div class="app g lift"><img src="assets/a1.png" alt="AutoCAD"></div>
+      <div class="app g lift"><img src="assets/a2.png" alt="Premiere Pro"></div>
+      <div class="app g lift"><img src="assets/a3.png" alt="Unity"></div>
+      <div class="app g lift"><img src="assets/a4.png" alt="V-Ray" style="width:48px"></div>
+      <div class="app g lift"><img class="full" src="assets/a5.png" alt="Photoshop"></div>
+      <div class="app g lift"><img src="assets/a6.png" alt="SketchUp"></div>
+      <div class="app g lift"><img src="assets/a7.png" alt="Fusion 360" style="height:58px"></div>
+      <div class="app g lift"><img src="assets/a8.png" alt="Creative Cloud" style="height:58px"></div>
+      <div class="app g lift"><img src="assets/a9.png" alt="Figma"></div>
+      <div class="app g lift"><img class="slim" src="assets/a10.png" alt="Procreate"></div>
+      <div class="app g lift"><img src="assets/a11.png" alt="Claude"></div>
+      <div class="app g lift"><img src="assets/a12.png" alt="Illustrator"></div>
+      <div class="app g lift"><img src="assets/a13.png" alt="KeyShot" style="width:56px"></div>
+      <div class="app g lift"><img src="assets/a14.png" alt="ChatGPT" style="height:55px"></div>
+      <div class="app g lift"><img src="assets/a15.png" alt="After Effects"></div>
     </div></div></div>
     <div class="mq m-chips" style="top:393px;--dur:38s" aria-label="What I do"><div class="trk"><div class="grp">
       <span class="chip g lift">Visual design</span><span class="chip g lift">Space design</span><span class="chip g lift">Retail design</span><span class="chip g lift">Fixture design</span><span class="chip g lift">Design Systems</span><span class="chip g lift">Fixture design</span><span class="chip g lift">Product design</span><span class="chip g lift">Brand strategy</span><span class="chip g lift">Content strategy</span><span class="chip g lift">Experience design</span>
@@ -429,23 +429,23 @@ section,.sec{position:absolute;left:0;width:1440px;z-index:2}
 
     <div class="icards">
       <div class="a icard g pop seq" data-after="stats" style="left:80px;top:658px">
-        <div class="im" style="top:30px"><img src="v2/assets/photo-nid.jpg" alt="Utkarsh at the NID Bangalore sign"></div>
-        <div class="tx" style="left:34px;top:192px;width:273px;gap:16px"><img src="v2/assets/hand/t-rightnow.svg" alt="Right now" width="200" height="40"><p>M.des in Retail Design at NID Bangalore, heading into my Graduation Project.</p></div>
+        <div class="im" style="top:30px"><img src="assets/photo-nid.jpg" alt="Utkarsh at the NID Bangalore sign"></div>
+        <div class="tx" style="left:34px;top:192px;width:273px;gap:16px"><img src="assets/hand/t-rightnow.svg" alt="Right now" width="200" height="40"><p>M.des in Retail Design at NID Bangalore, heading into my Graduation Project.</p></div>
       </div>
       <div class="a icard g pop seq" data-after="stats" style="left:550px;top:658px">
         <div class="im"></div>
-        <div class="tx" style="left:38px;top:191px;width:266px;gap:22px"><img src="v2/assets/hand/t-before.svg" alt="Before that" width="227" height="34"><p>B.Des in Product Design at UPID Noida, then a year at INRADA O.G.R.S Chennai.</p></div>
+        <div class="tx" style="left:38px;top:191px;width:266px;gap:22px"><img src="assets/hand/t-before.svg" alt="Before that" width="227" height="34"><p>B.Des in Product Design at UPID Noida, then a year at INRADA O.G.R.S Chennai.</p></div>
       </div>
       <div class="a icard g pop seq" data-after="stats" style="left:1020px;top:658px">
         <div class="im"></div>
-        <div class="tx" style="left:34px;top:190px;width:274px;gap:10px"><img src="v2/assets/hand/t-side.svg" alt="On the side" width="225" height="34"><p>U.design, my freelance brand and content Strategy, Brand Identity for suto katha and Anucriti, my t-shirt graphics label.</p></div>
+        <div class="tx" style="left:34px;top:190px;width:274px;gap:10px"><img src="assets/hand/t-side.svg" alt="On the side" width="225" height="34"><p>U.design, my freelance brand and content Strategy, Brand Identity for suto katha and Anucriti, my t-shirt graphics label.</p></div>
       </div>
     </div>
   </section>
 
   <!-- 3. selected work -->
   <section class="s-work" id="projects" style="top:1893px;height:1284px" aria-label="Selected work">
-    <h2 class="a pop" data-when="view" style="left:516.5px;top:43px;margin:0"><img class="hdr" src="v2/assets/hand/h-work.svg" alt="Selected Work." width="407" height="57"></h2>
+    <h2 class="a pop" data-when="view" style="left:516.5px;top:43px;margin:0"><img class="hdr" src="assets/hand/h-work.svg" alt="Selected Work." width="407" height="57"></h2>
     <article class="a wcard g lift pop seq" data-step="0" style="left:68.5px;top:184px"><div class="im"></div><h3>AR/VR Game Design</h3><p>Duck duck go is a AR/VR game concept for the privacy browser extension duck duck go</p></article>
     <article class="a wcard g lift pop seq" data-step="1" style="left:513.5px;top:184px"><div class="im"></div><h3>Branding</h3><p>Suto katha is a brand for a women livelihood center in Katakhalli swapnopuron society</p></article>
     <article class="a wcard g lift pop seq" data-step="2" style="left:958.5px;top:184px"><div class="im"></div><h3>PAWS (UI/UX)</h3><p>PAWS is a pet adoption and rescue app for people hpw see the incident happened want to report it</p></article>
@@ -455,21 +455,21 @@ section,.sec{position:absolute;left:0;width:1440px;z-index:2}
 
   <!-- 4. journey -->
   <section class="s-journey" id="journey" style="top:3177px;height:1174px" aria-label="The journey so far">
-    <h2 class="a pop" data-when="view" style="left:465px;top:90px;margin:0"><img class="hdr" src="v2/assets/hand/h-journey.svg" alt="The journey so far..." width="510" height="58"></h2>
+    <h2 class="a pop" data-when="view" style="left:465px;top:90px;margin:0"><img class="hdr" src="assets/hand/h-journey.svg" alt="The journey so far..." width="510" height="58"></h2>
     <div class="a pill g pop seq" style="left:157px;top:181px;width:308px;height:80px"><b>From Orai, Uttarpradesh</b><span>A young boy full of dreams.</span></div>
     <div class="a pill flip g pop seq" style="left:72px;top:344px;width:308px;height:80px"><b>UPID, Noida</b><span>B.Des in Product Design</span></div>
-    <div class="a pill g pop seq" style="left:445px;top:293px;width:308px;height:80px;padding-left:20px"><img class="keep" src="v2/assets/hand/sq1.svg" alt="Side Quest 1"><span>Visual identity for own brand Clothique</span></div>
+    <div class="a pill g pop seq" style="left:445px;top:293px;width:308px;height:80px;padding-left:20px"><img class="keep" src="assets/hand/sq1.svg" alt="Side Quest 1"><span>Visual identity for own brand Clothique</span></div>
     <div class="a pill g pop seq" style="left:561px;top:424px;width:308px;height:80px;padding-left:10px"><b>INRADA O.G.R.S, Chennai</b><span>Visual and space design</span></div>
-    <div class="a pill flip g pop seq" style="left:271px;top:568px;width:308px;height:80px;padding-right:16px"><img class="keep" src="v2/assets/hand/sq2.svg" alt="Side Quest 2"><span>AB engineering logo and Visual Identity</span></div>
+    <div class="a pill flip g pop seq" style="left:271px;top:568px;width:308px;height:80px;padding-right:16px"><img class="keep" src="assets/hand/sq2.svg" alt="Side Quest 2"><span>AB engineering logo and Visual Identity</span></div>
     <div class="a pill g pop seq" style="left:713px;top:602px;width:345px;height:80px;padding-left:10px"><b>National institute of design</b><span>Masters in Design for retail Experience</span></div>
-    <div class="a pill flip g pop seq" style="left:436px;top:792px;width:345px;height:80px"><img class="keep" src="v2/assets/hand/sq3.svg" alt="Side Quest 3"><span>Work with NGO<br>and design visual Identity</span></div>
-    <div class="a pill g pop seq" style="left:873px;top:804px;width:345px;height:80px"><img class="keep" src="v2/assets/hand/sq4.svg" alt="Side Quest 4"><span>Store Design for Brand “Anucriti”</span></div>
+    <div class="a pill flip g pop seq" style="left:436px;top:792px;width:345px;height:80px"><img class="keep" src="assets/hand/sq3.svg" alt="Side Quest 3"><span>Work with NGO<br>and design visual Identity</span></div>
+    <div class="a pill g pop seq" style="left:873px;top:804px;width:345px;height:80px"><img class="keep" src="assets/hand/sq4.svg" alt="Side Quest 4"><span>Store Design for Brand “Anucriti”</span></div>
     <div class="a pill next g pop seq" style="left:1229px;top:876px;width:163px;height:159px"><b>Next ??</b><span>Looking for a opportunity</span></div>
   </section>
 
   <!-- 5. what people say -->
   <section class="s-say" id="say" style="top:4351px;height:842px" aria-label="What people say">
-    <h2 class="a pop" data-when="view" style="left:507px;top:54px;margin:0"><img class="hdr" src="v2/assets/hand/h-say.svg" alt="What people say." width="478" height="74"></h2>
+    <h2 class="a pop" data-when="view" style="left:507px;top:54px;margin:0"><img class="hdr" src="assets/hand/h-say.svg" alt="What people say." width="478" height="74"></h2>
     <p class="a lead2 pop" data-when="view" style="left:512px;top:134px;width:469px">Clients, collaborators and teams I’ve worked with, in their own words.</p>
     <div class="mq m-say" style="top:258px;--dur:52s" aria-label="Client quotes"><div class="trk" style="padding-top:6px"><div class="grp">
       <figure class="qcard g" style="margin:0 49px 0 0"><span class="av"></span><figcaption class="nm">Client name<small>Organisation</small></figcaption><q>Client quote coming soon.</q></figure>
